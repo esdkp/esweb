@@ -14,21 +14,22 @@ I'm using this as a tool to learn Django programming and generally flex my menta
 I welcome any contributions folks want to bring to the table.  I would love to make this generic and configurable so any guild could use it, and use our DKP system as wanted.  While there is already a great EQDKP project, it doesn't have the interface and rules flexibility we wanted.  Please fork and send me a pull request with your code.  I ask that you make sure all unit tests pass, and that you don't skimp on writing your own tests as needed.
 
 ## Requirements
-I develop on a Mac, but this stuff should all work on any linux that supports python3 and has pip.
+I develop on a Mac, but this stuff should all work on any linux that supports python3 and has the following:
 
 - Python 3
 - pip
 - Django
+- PostgreSQL
 
 ## Installing Dev Environment
-I wrote a nice script to set things up for you.  Just invoke it:
+I wrote a nice script to set things up for you.  It will complain about anything you don't have installed.  Just invoke it:
 
 ```
 ./setup.sh
 ```
 
 ## Using the Dev Environment
-Again, I wrote a nice fun script.  Make sure you have tmux installed, then invoke it:
+Again, I wrote a nice fun script.  Make sure you have tmux installed (the setup script should install it), then invoke it:
 
 ```
 ./dev.sh
