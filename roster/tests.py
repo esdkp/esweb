@@ -1,3 +1,4 @@
+from unittest import skip
 from django.test import TestCase
 from .models import EQClass, EQRace, EQCharacter
 from .constants import EQ_CHARACTER_NAME_MINIMUM_LENGTH
@@ -32,6 +33,7 @@ class RosterViewTestCase(TestCase):
         response = self.client.get('/roster/')
         self.assertTemplateUsed('roster_view.html')
 
+    @skip
     def test_roster_lists_characters(self):
         eqclass = EQClass.objects.create()
         eqrace = EQRace.objects.create()
