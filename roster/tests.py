@@ -25,3 +25,21 @@ class EQCharacterTestCase(TestCase):
     def test_character_name_minimum_length(self):
         character = EQCharacter(name="Awesomenaut")
         self.assertGreater(len(character.name), EQ_CHARACTER_NAME_MINIMUM_LENGTH)
+
+
+class RosterViewTestCase(TestCase):
+    def test_roster_view_uses_template(self):
+        response = self.client.get('/roster/')
+        self.assertTemplateUsed('roster_view.html')
+
+    def test_roster_lists_characters(self):
+        eqclass = EQClass.objects.create()
+        eqrace = EQRace.objects.create()
+        names = ["Alsmack", "Kazh", "Ylyrra"]
+        for name in names:
+            EQCharacter.objects.create(name=name, eqclass=eqclass, eqrace=eqrace)
+
+        response = self.client.get('/roster/')
+        for name in names:
+            self.assertContains(response, name)
+
