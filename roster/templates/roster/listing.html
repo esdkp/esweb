@@ -1,0 +1,14 @@
+
+<h1>Roster</h1>
+{% if characters %}
+    {% block table %}
+    <table id="id_character_table" border="1" cellpadding="10">
+        <tr><td>Name</td><td>Class</td></tr>
+        {% for c in characters %}
+        <tr><td>{{ c.name }}</td><td>{{ c.eqclass }}</td></tr>
+        {% endfor %}
+    </table>
+    {% endblock %}
+{% else %}
+    <strong>No characters in database.</strong>
+{% endif %}
