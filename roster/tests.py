@@ -33,7 +33,6 @@ class RosterViewTestCase(TestCase):
         response = self.client.get('/roster/')
         self.assertTemplateUsed('roster_view.html')
 
-    @skip
     def test_roster_lists_characters(self):
         eqclass = EQClass.objects.create()
         eqrace = EQRace.objects.create()
@@ -44,4 +43,3 @@ class RosterViewTestCase(TestCase):
         response = self.client.get('/roster/')
         for name in names:
             self.assertContains(response, name)
-
