@@ -35,7 +35,7 @@ echo "Sourcing VENV"
 source ${VENV}/bin/activate
 
 echo "Updating pip via requirements.txt"
-pip install -r requirements.txt
+pip install -U -r requirements.txt
 
 echo "Checking for other needed programs for development"
 platform=$(uname)
