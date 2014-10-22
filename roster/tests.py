@@ -3,7 +3,9 @@ from django.test import TestCase
 from .models import EQClass, EQRace, EQCharacter
 from .constants import EQ_CHARACTER_NAME_MINIMUM_LENGTH
 
-
+# TODO: All these assert false thing == None tests are useless
+# Figure out how to ensure that only properly formatted data
+# can end up in the DB.
 class EQClassTestCase(TestCase):
     def test_class_must_have_both_short_and_long_name(self):
         eqclass = EQClass()
