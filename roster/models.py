@@ -24,11 +24,35 @@ class EQRace(models.Model):
         return self.name
 
 
+class EQExpansion(models.Model):
+    name = models.TextField()
+    short_name = models.TextField()
+
+    class Meta:
+        verbose_name = 'Expansion'
+
+    def __str__(self):
+        return self.name
+
+
+class EQFlag(models.Model):
+    name = models.TextField()
+    description = models.TextField(blank=True)
+    expansion = models.ForeignKey(EQExpansion)
+
+    class Meta:
+        verbose_name = 'Flag'
+
+    def __str__(self):
+        return self.name
+
+
 class EQCharacter(models.Model):
     name = models.TextField()
     surname = models.TextField(blank=True)
     eqclass = models.ForeignKey(EQClass)
     eqrace = models.ForeignKey(EQRace)
+    flags = models.ManyToManyField(EQFlag)
 
     class Meta:
         verbose_name = 'Character'

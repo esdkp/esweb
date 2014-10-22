@@ -1,6 +1,8 @@
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
 
+admin.site.site_header = 'Eternal Sovereign Administration'
+
 urlpatterns = patterns('',
     # Examples:
     # url(r'^$', 'esweb.views.home', name='home'),
