@@ -1,25 +1,14 @@
 from unittest import skip
 from django.test import TestCase
-from .models import EQClass, EQRace, EQCharacter
+from .models import EQCharacter
 from .constants import EQ_CHARACTER_NAME_MINIMUM_LENGTH
+
+import eq.models
+
 
 # TODO: All these assert false thing == None tests are useless
 # Figure out how to ensure that only properly formatted data
 # can end up in the DB.
-class EQClassTestCase(TestCase):
-    def test_class_must_have_both_short_and_long_name(self):
-        eqclass = EQClass()
-        self.assertFalse(eqclass.name == None)
-        self.assertFalse(eqclass.short_name == None)
-
-
-class EQRaceTestCase(TestCase):
-    def test_race_must_have_both_short_and_long_name(self):
-        eqrace = EQRace()
-        self.assertFalse(eqrace.name == None)
-        self.assertFalse(eqrace.short_name == None)
-
-
 class EQCharacterTestCase(TestCase):
     def test_character_must_have_name(self):
         character = EQCharacter()
@@ -36,8 +25,8 @@ class RosterViewTestCase(TestCase):
         self.assertTemplateUsed('roster_view.html')
 
     def test_roster_lists_characters(self):
-        eqclass = EQClass.objects.create()
-        eqrace = EQRace.objects.create()
+        eqclass = eq.Klass.objects.create()
+        eqrace = eq.Race.objects.create()
         names = ["Alsmack", "Kazh", "Ylyrra"]
         for name in names:
             EQCharacter.objects.create(name=name, eqclass=eqclass, eqrace=eqrace)

@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views import generic
-from roster.models import EQCharacter, EQRace, EQClass
+from roster.models import EQCharacter
 
 
 class RosterView(generic.ListView):
