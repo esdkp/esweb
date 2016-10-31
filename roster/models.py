@@ -38,7 +38,7 @@ class EQExpansion(models.Model):
 class EQFlag(models.Model):
     name = models.TextField()
     description = models.TextField(blank=True)
-    expansion = models.ForeignKey(EQExpansion)
+    expansion = models.ForeignKey(EQExpansion, on_delete=models.CASCADE)
 
     class Meta:
         verbose_name = 'Flag'
@@ -50,8 +50,8 @@ class EQFlag(models.Model):
 class EQCharacter(models.Model):
     name = models.TextField()
     surname = models.TextField(blank=True)
-    eqclass = models.ForeignKey(EQClass)
-    eqrace = models.ForeignKey(EQRace)
+    eqclass = models.ForeignKey(EQClass, on_delete=models.CASCADE)
+    eqrace = models.ForeignKey(EQRace, on_delete=models.CASCADE)
     flags = models.ManyToManyField(EQFlag)
 
     class Meta:

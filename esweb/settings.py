@@ -22,8 +22,6 @@ SECRET_KEY = 'fm9nwjb#2b2fjmg6p#e070z&v)-s4am6bxt9-@((s&dtawtmb#'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-TEMPLATE_DEBUG = True
-
 ALLOWED_HOSTS = []
 
 
@@ -39,7 +37,7 @@ INSTALLED_APPS = (
     'roster',
 )
 
-MIDDLEWARE_CLASSES = (
+MIDDLEWARE = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -50,6 +48,23 @@ MIDDLEWARE_CLASSES = (
 )
 
 ROOT_URLCONF = 'esweb.urls'
+
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [],
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+            ],
+            'debug': True,
+        },
+    },
+]
 
 WSGI_APPLICATION = 'esweb.wsgi.application'
 

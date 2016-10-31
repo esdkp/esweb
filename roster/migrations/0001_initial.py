@@ -38,8 +38,8 @@ class Migration(migrations.Migration):
                 ('id', models.AutoField(primary_key=True, auto_created=True, serialize=False, verbose_name='ID')),
                 ('name', models.TextField()),
                 ('surname', models.TextField()),
-                ('eqclass', models.ForeignKey(to_field='id', to='roster.EQClass')),
-                ('eqrace', models.ForeignKey(to_field='id', to='roster.EQRace')),
+                ('eqclass', models.ForeignKey(to_field='id', to='roster.EQClass', on_delete=models.CASCADE)),
+                ('eqrace', models.ForeignKey(to_field='id', to='roster.EQRace', on_delete=models.CASCADE)),
             ],
             options={
             },

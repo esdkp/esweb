@@ -29,7 +29,7 @@ class Migration(migrations.Migration):
                 ('id', models.AutoField(verbose_name='ID', serialize=False, primary_key=True, auto_created=True)),
                 ('name', models.TextField()),
                 ('description', models.TextField(blank=True)),
-                ('expansion', models.ForeignKey(to='roster.EQExpansion')),
+                ('expansion', models.ForeignKey(to='roster.EQExpansion', on_delete=models.CASCADE)),
             ],
             options={
                 'verbose_name': 'Flag',
