@@ -1,0 +1,80 @@
+- model: roster.EQRace
+  pk: 1
+  fields:
+    name: "Human"
+    short_name: "HUM"
+- model: roster.EQRace
+  pk: 2
+  fields:
+    name: "Barbarian"
+    short_name: "BAR"
+- model: roster.EQRace
+  pk: 3
+  fields:
+    name: "Dark Elf"
+    short_name: "DEF"
+- model: roster.EQRace
+  pk: 4
+  fields:
+    name: "Drakkin"
+    short_name: "DRK"
+- model: roster.EQRace
+  pk: 5
+  fields:
+    name: "Dwarf"
+    short_name: "DWF"
+- model: roster.EQRace
+  pk: 6
+  fields:
+    name: "Erudite"
+    short_name: "ERU"
+- model: roster.EQRace
+  pk: 7
+  fields:
+    name: "Froglok"
+    short_name: "FRG"
+- model: roster.EQRace
+  pk: 8
+  fields:
+    name: "Gnome"
+    short_name: "GNM"
+- model: roster.EQRace
+  pk: 9
+  fields:
+    name: "Half Elf"
+    short_name: "HEF"
+- model: roster.EQRace
+  pk: 10
+  fields:
+    name: "Halfling"
+    short_name: "HFL"
+- model: roster.EQRace
+  pk: 11
+  fields:
+    name: "High Elf"
+    short_name: "HIE"
+- model: roster.EQRace
+  pk: 12
+  fields:
+    name: "Iksar"
+    short_name: "IKS"
+- model: roster.EQRace
+  pk: 13
+  fields:
+    name: "Ogre"
+    short_name: "OGR"
+- model: roster.EQRace
+  pk: 14
+  fields:
+    name: "Troll"
+    short_name: "TRL"
+- model: roster.EQRace
+  pk: 15
+  fields:
+    name: "Vah Shir"
+    short_name: "VAH"
+- model: roster.EQRace
+  pk: 16
+  fields:
+    name: "Wood Elf"
+    short_name: "ELF"

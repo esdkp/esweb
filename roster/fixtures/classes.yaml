@@ -1,0 +1,75 @@
+- model: roster.EQClass
+  pk: 1
+  fields:
+    name: "Shadow Knight"
+    short_name: "SHD"
+- model: roster.EQClass
+  pk: 2
+  fields:
+    name: "Ranger"
+    short_name: "RNG"
+- model: roster.EQClass
+  pk: 3
+  fields:
+    name: "Wizard"
+    short_name: "WIZ"
+- model: roster.EQClass
+  pk: 4
+  fields:
+    name: "Magician"
+    short_name: "MAG"
+- model: roster.EQClass
+  pk: 5
+  fields:
+    name: "Warrior"
+    short_name: "WAR"
+- model: roster.EQClass
+  pk: 6
+  fields:
+    name: "Paladin"
+    short_name: "PAL"
+- model: roster.EQClass
+  pk: 7
+  fields:
+    name: "Cleric"
+    short_name: "CLR"
+- model: roster.EQClass
+  pk: 8
+  fields:
+    name: "Necromancer"
+    short_name: "NEC"
+- model: roster.EQClass
+  pk: 9
+  fields:
+    name: "Shaman"
+    short_name: "SHM"
+- model: roster.EQClass
+  pk: 10
+  fields:
+    name: "Druid"
+    short_name: "DRU"
+- model: roster.EQClass
+  pk: 11
+  fields:
+    name: "Enchanter"
+    short_name: "ENC"
+- model: roster.EQClass
+  pk: 12
+  fields:
+    name: "Monk"
+    short_name: "MNK"
+- model: roster.EQClass
+  pk: 13
+  fields:
+    name: "Rogue"
+    short_name: "ROG"
+- model: roster.EQClass
+  pk: 14
+  fields:
+    name: "Beastlord"
+    short_name: "BST"
+- model: roster.EQClass
+  pk: 15
+  fields:
+    name: "Berserker"
+    short_name: "BER"
