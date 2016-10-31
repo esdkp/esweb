@@ -52,7 +52,7 @@ class EQCharacter(models.Model):
     surname = models.TextField(blank=True)
     eqclass = models.ForeignKey(EQClass, on_delete=models.CASCADE)
     eqrace = models.ForeignKey(EQRace, on_delete=models.CASCADE)
-    flags = models.ManyToManyField(EQFlag)
+    flags = models.ManyToManyField(EQFlag, blank=True)
 
     class Meta:
         verbose_name = 'Character'
