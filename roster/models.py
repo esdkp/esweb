@@ -3,7 +3,7 @@ from django.db import models
 
 class EQClass(models.Model):
     name = models.TextField()
-    short_name = models.TextField()
+    short_name = models.TextField(unique=True)
 
     class Meta:
         verbose_name = 'Class'
@@ -15,7 +15,7 @@ class EQClass(models.Model):
 
 class EQRace(models.Model):
     name = models.TextField()
-    short_name = models.TextField()
+    short_name = models.TextField(unique=True)
 
     class Meta:
         verbose_name = 'Race'
@@ -26,7 +26,7 @@ class EQRace(models.Model):
 
 class EQExpansion(models.Model):
     name = models.TextField()
-    short_name = models.TextField()
+    short_name = models.TextField(unique=True)
 
     class Meta:
         verbose_name = 'Expansion'
@@ -48,7 +48,7 @@ class EQFlag(models.Model):
 
 
 class EQCharacter(models.Model):
-    name = models.TextField()
+    name = models.TextField(unique=True)
     surname = models.TextField(blank=True)
     eqclass = models.ForeignKey(EQClass, on_delete=models.CASCADE)
     eqrace = models.ForeignKey(EQRace, on_delete=models.CASCADE)
