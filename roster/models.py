@@ -1,5 +1,7 @@
+from __future__ import unicode_literals
 from django.db import models
 import eq.models
+
 
 class EQCharacter(models.Model):
     name = models.TextField(unique=True)

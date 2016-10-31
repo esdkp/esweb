@@ -25,8 +25,8 @@ class RosterViewTestCase(TestCase):
         self.assertTemplateUsed('roster_view.html')
 
     def test_roster_lists_characters(self):
-        eqclass = eq.Klass.objects.create()
-        eqrace = eq.Race.objects.create()
+        eqclass = eq.models.Klass.objects.create()
+        eqrace = eq.models.Race.objects.create()
         names = ["Alsmack", "Kazh", "Ylyrra"]
         for name in names:
             EQCharacter.objects.create(name=name, eqclass=eqclass, eqrace=eqrace)
