@@ -21,6 +21,7 @@ class Race(models.Model):
 
     class Meta:
         verbose_name = 'Race'
+        verbose_name_plural = 'Races'
 
     def __str__(self):
         return self.name
@@ -32,6 +33,7 @@ class Expansion(models.Model):
 
     class Meta:
         verbose_name = 'Expansion'
+        verbose_name_plural = 'Expansions'
 
     def __str__(self):
         return self.name
@@ -44,6 +46,7 @@ class Flag(models.Model):
 
     class Meta:
         verbose_name = 'Flag'
+        verbose_name_plural = 'Flags'
 
     def __str__(self):
         return self.name

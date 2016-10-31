@@ -10,6 +10,7 @@ class EQCharacter(models.Model):
 
     class Meta:
         verbose_name = 'Character'
+        verbose_name_plural = 'Characters'
 
     def __str__(self):
         return self.name
