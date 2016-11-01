@@ -1,114 +1,114 @@
-- model: roster.EQExpansion
+- model: eq.Expansion
   pk: 1
   fields:
     name: "The Ruins of Kunark"
     short_name: "ROK"
-- model: roster.EQExpansion
+- model: eq.Expansion
   pk: 2
   fields:
     name: "The Scars of Velious"
     short_name: "VEL"
-- model: roster.EQExpansion
+- model: eq.Expansion
   pk: 3
   fields:
     name: "The Shadows of Luclin"
     short_name: "SOL"
-- model: roster.EQExpansion
+- model: eq.Expansion
   pk: 4
   fields:
     name: "The Planes of Power"
     short_name: "POP"
-- model: roster.EQExpansion
+- model: eq.Expansion
   pk: 5
   fields:
     name: "The Legacy of Ykesha"
     short_name: "LOY"
-- model: roster.EQExpansion
+- model: eq.Expansion
   pk: 6
   fields:
     name: "Lost Dungeons of Norrath"
     short_name: "LDoN"
-- model: roster.EQExpansion
+- model: eq.Expansion
   pk: 7
   fields:
     name: "Gates of Discord"
     short_name: "GOD"
-- model: roster.EQExpansion
+- model: eq.Expansion
   pk: 8
   fields:
     name: "Omens of War"
     short_name: "OOW"
-- model: roster.EQExpansion
+- model: eq.Expansion
   pk: 9
   fields:
     name: "Dragons of Norrath"
     short_name: "DON"
-- model: roster.EQExpansion
+- model: eq.Expansion
   pk: 10
   fields:
     name: "Depths of Darkhollow"
     short_name: "DOD"
-- model: roster.EQExpansion
+- model: eq.Expansion
   pk: 11
   fields:
     name: "Prophecy of Ro"
     short_name: "POR"
-- model: roster.EQExpansion
+- model: eq.Expansion
   pk: 12
   fields:
     name: "The Serpent's Spine"
     short_name: "TSS"
-- model: roster.EQExpansion
+- model: eq.Expansion
   pk: 13
   fields:
     name: "The Buried Sea"
     short_name: "TBS"
-- model: roster.EQExpansion
+- model: eq.Expansion
   pk: 14
   fields:
     name: "Secrets of Faydwer"
     short_name: "SOF"
-- model: roster.EQExpansion
+- model: eq.Expansion
   pk: 15
   fields:
     name: "Seeds of Destruction"
     short_name: "SOD"
-- model: roster.EQExpansion
+- model: eq.Expansion
   pk: 16
   fields:
     name: "Underfoot"
     short_name: "UND"
-- model: roster.EQExpansion
+- model: eq.Expansion
   pk: 17
   fields:
     name: "House of Thule"
     short_name: "HOT"
-- model: roster.EQExpansion
+- model: eq.Expansion
   pk: 18
   fields:
     name: "Veil of Alaris"
     short_name: "VOA"
-- model: roster.EQExpansion
+- model: eq.Expansion
   pk: 19
   fields:
     name: "Rain of Fear"
     short_name: "ROF"
-- model: roster.EQExpansion
+- model: eq.Expansion
   pk: 20
   fields:
     name: "Call of the Forsaken"
     short_name: "COTF"
-- model: roster.EQExpansion
+- model: eq.Expansion
   pk: 21
   fields:
     name: "The Darkened Sea"
     short_name: "TDS"
-- model: roster.EQExpansion
+- model: eq.Expansion
   pk: 22
   fields:
     name: "The Broken Mirror"
     short_name: "TBM"
-- model: roster.EQExpansion
+- model: eq.Expansion
   pk: 23
   fields:
     name: "Empires of Kunark"
