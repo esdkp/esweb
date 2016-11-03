@@ -1,11 +1,12 @@
 {% if character %}
     <h1>{{ character.name }}</h1>
     <h2>{{ character.eqrace }} {{ character.eqclass }}</h2>
-    <h3>Flags<h3>
-    {# TODO: Implement flags display #}
-    {% for f in character.flags %}
-        <li>{{ f.name }}
-    {% endfor %}
+    {% if character.flags %}
+        <h3>Flags<h3>
+        {% for f in character.flags %}
+            <li>{{ f.name }}
+        {% endfor %}
+    {% endif %}
 {% else %}
     No character found.
 {% endif %}
