@@ -1,0 +1,105 @@
+- model: eq.Server
+  pk: 1
+  fields:
+    name: "Bertoxxulous"
+    short_name: "bertox"
+- model: eq.Server
+  pk: 2
+  fields:
+    name: "Antonious Bayle"
+    short_name: "antonious"
+- model: eq.Server
+  pk: 3
+  fields:
+    name: "Brekt"
+    short_name: "brekt"
+- model: eq.Server
+  pk: 4
+  fields:
+    name: "Bristlebane"
+    short_name: "bristle"
+- model: eq.Server
+  pk: 5
+  fields:
+    name: "Cazic Thule"
+    short_name: "cazic"
+- model: eq.Server
+  pk: 6
+  fields:
+    name: "Drinal"
+    short_name: "drinal"
+- model: eq.Server
+  pk: 7
+  fields:
+    name: "Erollisi Marr"
+    short_name: "erollisi"
+- model: eq.Server
+  pk: 8
+  fields:
+    name: "Fippy Darkpaw"
+    short_name: "Fippy"
+- model: eq.Server
+  pk: 9
+  fields:
+    name: "Firiona Vie"
+    short_name: "firiona"
+- model: eq.Server
+  pk: 10
+  fields:
+    name: "Luclin"
+    short_name: "luclin"
+- model: eq.Server
+  pk: 11
+  fields:
+    name: "Lockjaw"
+    short_name: "lockjaw"
+- model: eq.Server
+  pk: 12
+  fields:
+    name: "Phinigel"
+    short_name: "phinigel"
+- model: eq.Server
+  pk: 13
+  fields:
+    name: "Povar"
+    short_name: "povar"
+- model: eq.Server
+  pk: 14
+  fields:
+    name: "Ragefire"
+    short_name: "ragefire"
+- model: eq.Server
+  pk: 15
+  fields:
+    name: "The Rathe"
+    short_name: "rathe"
+- model: eq.Server
+  pk: 16
+  fields:
+    name: "Trakanon"
+    short_name: "trakanon"
+- model: eq.Server
+  pk: 17
+  fields:
+    name: "Tunare"
+    short_name: "tunare"
+- model: eq.Server
+  pk: 18
+  fields:
+    name: "Vox"
+    short_name: "vox"
+- model: eq.Server
+  pk: 19
+  fields:
+    name: "Vulak'Aerr"
+    short_name: "vulak"
+- model: eq.Server
+  pk: 20
+  fields:
+    name: "Xegony"
+    short_name: "xegony"
+- model: eq.Server
+  pk: 21
+  fields:
+    name: "Zek"
+    short_name: "zek"

@@ -49,3 +49,35 @@ class Flag(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Server(models.Model):
+    name = models.TextField(unique=True)
+    short_name = models.TextField(unique=True)
+
+    def __str__(self):
+        return self.name
+
+
+class Guild(models.Model):
+    name = models.TextField(unique=True)
+    server = models.ForeignKey(Server)
+
+    def __str__(self):
+        return self.name
+
+
+class Character(models.Model):
+    name = models.TextField(unique=True)
+    surname = models.TextField(blank=True)
+    eqclass = models.ForeignKey(Klass, on_delete=models.CASCADE)
+    eqrace = models.ForeignKey(Race, on_delete=models.CASCADE)
+    eqflags = models.ManyToManyField(Flag, blank=True)
+    guild = models.ForeignKey(Guild, blank=True, null=True)
+
+    class Meta:
+        verbose_name = 'Character'
+        verbose_name_plural = 'Characters'
+
+    def __str__(self):
+        return self.name

@@ -1,5 +1,11 @@
 from django.test import TestCase
-from .models import Klass, Race, Expansion
+from .models import Klass, Race, Expansion, Character
+from .constants import CHARACTER_NAME_MINIMUM_LENGTH
+
+
+# TODO: All these assert false thing == None tests are useless
+# Figure out how to ensure that only properly formatted data
+# can end up in the DB.
 
 
 class KlassTestCase(TestCase):
@@ -21,3 +27,13 @@ class ExpansionTestCase(TestCase):
         expansion = Expansion()
         self.assertFalse(expansion.name == None)
         self.assertFalse(expansion.short_name == None)
+
+
+class CharacterTestCase(TestCase):
+    def test_character_must_have_name(self):
+        character = Character()
+        self.assertFalse(character.name == None)
+
+    def test_character_name_minimum_length(self):
+        character = Character(name="Awesomenaut")
+        self.assertGreater(len(character.name), CHARACTER_NAME_MINIMUM_LENGTH)

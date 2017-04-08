@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views import generic
-from roster.models import EQCharacter
+import eq.models
 
 
 class RosterView(generic.ListView):
@@ -8,10 +8,10 @@ class RosterView(generic.ListView):
     context_object_name = 'characters'
 
     def get_queryset(self):
-        return EQCharacter.objects.all()
+        return eq.models.Character.objects.all()
 
 
 class CharacterView(generic.DetailView):
-    model = EQCharacter
+    model = eq.models.Character
     template_name = 'roster/character_detail.html'
     context_object_name = 'character'
