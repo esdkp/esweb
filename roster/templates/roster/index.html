@@ -3,11 +3,18 @@
 {% if characters %}
     {% block table %}
     <table id="id_character_table" border="1" cellpadding="10">
-        <tr><td>Name</td><td>Class</td></tr>
+        <tr>
+            <td>Name</td>
+            <td>Class</td>
+            <td>Race</td>
+            <td>Guild</td>
+        </tr>
         {% for c in characters %}
         <tr>
             <td><a href="{% url 'roster:character' c.id %}">{{ c.name }}</a></td>
             <td>{{ c.eqclass }}</td>
+            <td>{{ c.eqrace }}</td>
+            <td><a href="{% url 'roster:guild' c.guild.id %}">{{ c.guild }}</a></td>
         </tr>
         {% endfor %}
     </table>

@@ -1,6 +1,5 @@
 from unittest import skip
 from django.test import TestCase
-from .constants import EQ_CHARACTER_NAME_MINIMUM_LENGTH
 
 import eq.models
 

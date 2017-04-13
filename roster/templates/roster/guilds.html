@@ -1,0 +1,17 @@
+
+<h1>Guilds</h1>
+{% if guilds %}
+    {% block table %}
+    <table id="id_guilds_table" border="1" cellpadding="10">
+        <tr><td>Name</td><td>Class</td></tr>
+        {% for g in guilds %}
+        <tr>
+            <td><a href="{% url 'roster:guild' g.id %}">{{ g.name }}</a></td>
+            <td>{{ g.server }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% endblock %}
+{% else %}
+    <strong>No guilds in database.</strong>
+{% endif %}
