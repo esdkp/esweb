@@ -14,7 +14,7 @@
             <td><a href="{% url 'roster:character' c.id %}">{{ c.name }}</a></td>
             <td>{{ c.eqclass }}</td>
             <td>{{ c.eqrace }}</td>
-            <td><a href="{% url 'roster:guild' c.guild.id %}">{{ c.guild }}</a></td>
+            <td>{% if c.guild %}<a href="{% url 'roster:guild' c.guild.id %}">{{ c.guild }}</a>{% endif %}</td>
         </tr>
         {% endfor %}
     </table>
