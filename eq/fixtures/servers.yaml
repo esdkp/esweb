@@ -103,3 +103,8 @@
   fields:
     name: "Zek"
     short_name: "zek"
+- model: eq.Server
+  pk: 22
+  fields:
+    name: "Ag'narr"
+    short_name: "agnarr"
