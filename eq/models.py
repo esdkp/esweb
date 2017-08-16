@@ -63,6 +63,9 @@ class Guild(models.Model):
     name = models.TextField(unique=True)
     server = models.ForeignKey(Server, on_delete=models.CASCADE)
 
+    def characters(self):
+        return Character.objects.filter(server=self.id)
+
     def __str__(self):
         return self.name
 
@@ -74,6 +77,7 @@ class Character(models.Model):
     eqrace = models.ForeignKey(Race, on_delete=models.CASCADE)
     eqflags = models.ManyToManyField(Flag, blank=True)
     guild = models.ForeignKey(Guild, blank=True, null=True, on_delete=models.CASCADE)
+    server = models.ForeignKey(Server, on_delete=models.CASCADE)
 
     class Meta:
         verbose_name = 'Character'

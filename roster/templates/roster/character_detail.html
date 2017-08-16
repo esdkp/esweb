@@ -1,6 +1,6 @@
 {% if character %}
     <h1>{{ character.name }}</h1>
-    <h2>{{ character.eqrace }} {{ character.eqclass }}</h2>
+    <p>{{ character.eqrace }} {{ character.eqclass }} on the {{ character.server }} server.</p>
     <h3>Flags</h3>
     {% if character.flags %}
         {% for f in character.flags %}
