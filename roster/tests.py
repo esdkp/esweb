@@ -47,8 +47,8 @@ class GuildsViewTestCase(TestCase):
 class GuildViewTestCase(TestCase):
     fixtures = ["servers.yaml"]
 
-    def setUp():
+    def setUp(self):
         guild_names = ["Eternal Sovereign", "Rainbow Friends", "Enchiladas"]
 
-    def test_guild_view_list_characters_in_guild():
+    def test_guild_view_list_characters_in_guild(self):
         pass
