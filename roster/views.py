@@ -1,27 +1,27 @@
-from django.shortcuts import render
 from django.views import generic
-import eq.models
+from django.shortcuts import get_object_or_404
+from eq.models import Character, Guild
 
 
 class RosterView(generic.ListView):
-    model = eq.models.Character
+    model = Character
     template_name = 'roster/index.html'
     context_object_name = 'characters'
 
 
 class CharacterView(generic.DetailView):
-    model = eq.models.Character
+    model = Character
     template_name = 'roster/character_detail.html'
     context_object_name = 'character'
 
 
 class GuildsView(generic.ListView):
-    model = eq.models.Guild
+    model = Guild
     template_name = 'roster/guilds.html'
     context_object_name = 'guilds'
 
 
 class GuildRosterView(generic.DetailView):
-    model = eq.models.Guild
+    model = Guild
     template_name = 'roster/guild.html'
     context_object_name = 'guild'

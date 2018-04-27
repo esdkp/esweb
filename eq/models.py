@@ -64,7 +64,7 @@ class Guild(models.Model):
     server = models.ForeignKey(Server, on_delete=models.CASCADE)
 
     def characters(self):
-        return Character.objects.filter(server=self.id)
+        return Character.objects.filter(guild=self.id)
 
     def __str__(self):
         return self.name
