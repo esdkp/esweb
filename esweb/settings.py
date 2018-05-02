@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'eq',
     'roster',
+    'dkp',
 ]
 
 MIDDLEWARE = [
