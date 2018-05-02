@@ -85,3 +85,36 @@ class Character(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Event(models.Model):
+    name = models.TextField()
+    expansion = models.ForeignKey(Expansion, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.name
+
+
+class Item(models.Model):
+    name = models.TextField()
+    event = models.ForeignKey(Event, on_delete=models.CASCADE, blank=True, null=True)
+    expansion = models.ForeignKey(Expansion, on_delete=models.CASCADE, blank=True, null=True)
+    default_value = models.FloatField(default=0)
+
+    def get_expansion(self):
+        if self.expansion is not None:
+            return self.expansion.short_name
+        elif event is not None:
+            return self.event.expansion.short_name
+        else:
+            return None
+
+    def full_name(self):
+        e = self.get_expansion()
+        if e is not None:
+            return "[{}] {}".format(e, self.name)
+        else:
+            return self.name
+
+    def __str__(self):
+        return self.full_name

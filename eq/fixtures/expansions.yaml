@@ -113,3 +113,8 @@
   fields:
     name: "Empires of Kunark"
     short_name: "EOK"
+- model: eq.Expansion
+  pk: 24
+  fields:
+    name: "Ring of Scale"
+    short_name: "ROS"
