@@ -89,7 +89,7 @@ class Character(models.Model):
 
 class Event(models.Model):
     name = models.TextField()
-    expansion = models.ForeignKey(Expansion, on_delete=models.CASCADE)
+    expansion = models.ForeignKey(Expansion, on_delete=models.CASCADE, blank=True, null=True)
 
     def __str__(self):
         return self.name
