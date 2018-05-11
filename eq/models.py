@@ -99,12 +99,12 @@ class Item(models.Model):
     name = models.TextField()
     event = models.ForeignKey(Event, on_delete=models.CASCADE, blank=True, null=True)
     expansion = models.ForeignKey(Expansion, on_delete=models.CASCADE, blank=True, null=True)
-    default_value = models.FloatField(default=0)
+    dkp = models.FloatField(default=0)
 
     def get_expansion(self):
         if self.expansion is not None:
             return self.expansion.short_name
-        elif event is not None:
+        elif self.event is not None:
             return self.event.expansion.short_name
         else:
             return None
@@ -117,4 +117,4 @@ class Item(models.Model):
             return self.name
 
     def __str__(self):
-        return self.full_name
+        return self.full_name()
