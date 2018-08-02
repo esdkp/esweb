@@ -3,19 +3,26 @@ from eq.models import Event, Item, Character
 
 
 class Raid(models.Model):
-    date = models.DateTimeField()
+    date = models.DateField()
     event = models.ForeignKey(Event, on_delete=models.CASCADE)
     attendance_value = models.FloatField()
 
     def loot(self):
         return Loot.objects.filter(raid=self.id)
 
-    def raiders(selfself):
+    def raiders(self):
         return Raider.objects.filter(raid=self.id)
 
     # The amount of DKP the raid is worth.
     def dkp(self):
-        return sum([l.dkp for l in self.loot()])
+        return float(sum([l.dkp for l in self.loot()]))
+
+    def dkp_per_person(self):
+        number_of_raiders = len(self.raiders())
+        if number_of_raiders == 0:
+            return 0.0
+
+        return self.dkp() / number_of_raiders
 
     def __str__(self):
         return "{} {}".format(self.date, self.event.name)

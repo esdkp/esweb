@@ -78,6 +78,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'esweb',
+        'USER': 'esweb',
+        'PASSWORD': 'esweb'
     }
 }
 
