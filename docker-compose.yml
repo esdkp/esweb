@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  postgres:
+    image: postgres:11
+    restart: always
+
+  web:
+    restart: always
+    environment:
+      - DJANGO_SECRET_KEY=local
+    build:
+      context: ./
+      args:
+        - BUILD_COMMIT_SHA=localdev
+    command: python wait_for_postgres.py && pip install -r requirements.txt &&
+             ./manage.py migrate && ./manage.py runserver 0.0.0.0:8000
+    volumes:
+      - ./:/code
+    ports:
+      - 8080:8000
+    depends_on:
+      - postgres

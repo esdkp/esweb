@@ -118,3 +118,8 @@
   fields:
     name: "Ring of Scale"
     short_name: "ROS"
+- model: eq.Expansion
+  pk: 25
+  fields:
+    name: "The Burning Lands"
+    short_name: "TBL"
