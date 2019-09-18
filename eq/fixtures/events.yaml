@@ -9,47 +9,47 @@
 - model: eq.Event
   pk: 3
   fields:
-    name: "Talendor"
+    name: "Veeshan's Peak: Talendor"
     expansion: 24
 - model: eq.Event
   pk: 4
   fields:
-    name: "Silverwing and Xygoz"
+    name: "Veeshan's Peak: Silverwing and Xygoz"
     expansion: 24
 - model: eq.Event
   pk: 5
   fields:
-    name: "Hoshkar"
+    name: "Veeshan's Peak: Hoshkar"
     expansion: 24
 - model: eq.Event
   pk: 6
   fields:
-    name: "The Sathir Line"
+    name: "Sathir's Tomb: The Sathir Line"
     expansion: 24
 - model: eq.Event
   pk: 7
   fields:
-    name: "Drusella's Vault"
+    name: "Sathir's Tomb: Drusella's Vault"
     expansion: 24
 - model: eq.Event
   pk: 8
   fields:
-    name: "Crypt Robbers"
+    name: "Sathir's Tomb: Crypt Robbers"
     expansion: 24
 - model: eq.Event
   pk: 9
   fields:
-    name: "Balance of Power"
+    name: "Gorowyn: Balance of Power"
     expansion: 24
 - model: eq.Event
   pk: 10
   fields:
-    name: "End of Empire"
+    name: "The Skyfire Mountains: End of Empire"
     expansion: 24
 - model: eq.Event
   pk: 11
   fields:
-    name: "Fell Foliage"
+    name: "The Overthere: Fell Foliage"
     expansion: 24
 - model: eq.Event
   pk: 12
@@ -91,3 +91,58 @@
   fields:
     name: "Doorstep of War"
     expansion: 23
+- model: eq.Event
+  pk: 20
+  fields:
+    name: "Stratos: Zephyr's Flight: Fight Fire"
+    expansion: 25
+- model: eq.Event
+  pk: 21
+  fields:
+    name: "The Plane of Smoke: Rise of Smoke"
+    expansion: 25
+- model: eq.Event
+  pk: 22
+  fields:
+    name: "Doomfire the Burning Lands (TBL): General Reparm"
+    expansion: 25
+- model: eq.Event
+  pk: 23
+  fields:
+    name: "Empyr: Realms of Ash: Prince Ralaifin"
+    expansion: 25
+- model: eq.Event
+  pk: 24
+  fields:
+    name: "Aalishai: Palace of Embers: Palace Gates"
+    expansion: 25
+- model: eq.Event
+  pk: 25
+  fields:
+    name: "Mearatas: The Stone Demesne: Unfettered Emerald Excellence"
+    expansion: 25
+- model: eq.Event
+  pk: 26
+  fields:
+    name: "Empyr: Realms of Ash: The Conflagration Generals"
+    expansion: 25
+- model: eq.Event
+  pk: 27
+  fields:
+    name: "Esianti: Palace of Winds: Moon Serf of Harmonious Heavens"
+    expansion: 25
+- model: eq.Event
+  pk: 28
+  fields:
+    name: "Gnome Memorial Mountain: Dragon in the Works"
+    expansion: 25
+- model: eq.Event
+  pk: 29
+  fields:
+    name: "Gnome Memorial Mountain: Night at the Museum"
+    expansion: 25
+- model: eq.Event
+  pk: 30
+  fields:
+    name: "Gnome Memorial Mountain: Mechagnomic Whirlrender"
+    expansion: 25
