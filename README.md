@@ -15,3 +15,16 @@ I welcome any contributions folks want to bring to the table.  I would love to m
 
 ## Requirements
 I develop on a Mac, but this stuff should all work on any operating system that can run docker and docker-compose.
+
+## Seeding Fixture Data
+
+EQ has a bunch of rarely changing data that I've made available to seed your database with as fixtures.
+```
+docker-compose exec web bash -c 'python manage.py loaddata classes events expansions races servers'
+```
+This should load:
+- Classes
+- Races
+- Servers
+- Expansions (through TBL)
+- Raid Events (EOK, ROS, and TBL)
