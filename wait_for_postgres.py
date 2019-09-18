@@ -8,7 +8,7 @@ interval_unit = "second" if check_interval == 1 else "seconds"
 config = {
     "dbname": os.getenv("POSTGRES_DB", "postgres"),
     "user": os.getenv("POSTGRES_USER", "postgres"),
-    "password": os.getenv("POSTGRES_PASS", ""),
+    "password": os.getenv("POSTGRES_PASSWORD", ""),
     "host": os.getenv("POSTGRES_HOST", "postgres")
 }
 
