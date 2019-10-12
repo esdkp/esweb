@@ -1,0 +1,22 @@
+<h1>Raids</h1>
+
+{% if raids %}
+{% block table %}
+<table id="id_raids_table" border="1" cellpadding="10">
+    <tr>
+        <td>Raid ID</td>
+        <td>Event Name</td>
+        <td>Date</td>
+    </tr>
+    {% for r in raids %}
+    <tr>
+        <td><a href="{% url 'dkp:raid-view' r.id %}">{{ r.id }}</a></td>
+        <td>{{ r.event.name }}</td>
+        <td>{{ r.date }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
+{% else %}
+<strong>No raids in database.</strong>
+{% endif %}

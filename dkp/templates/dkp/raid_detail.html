@@ -1,0 +1,27 @@
+{% if raid %}
+<h1>{{ raid.date }} - {{ raid.event.name }}</h1>
+<p>DKP Value: {{ raid.dkp }}</p>
+<p>Attendance Value: {{ raid.attendance_value }}</p>
+
+<h3>Loot</h3>
+{% if raid.loot %}
+{% for loot in raid.loot %}
+<li>{{ loot.item.name }}</li>
+{% endfor %}
+{% else %}
+<li>No loot found</li>
+{% endif %}
+
+<h3>Raiders</h3>
+{% if raid.raiders %}
+{% for raider in raid.raiders %}
+<li>{{ raider.name }}</li>
+{% endfor %}
+{% else %}
+<li>No raiders found</li>
+{% endif %}
+
+
+{% else %}
+No raid found.
+{% endif %}

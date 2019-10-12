@@ -4,3 +4,9 @@ gunicorn==19.9.0
 psycopg2-binary==2.8.3
 pytz==2017.3
 PyYAML>=4.2b1
+
+# Dev packages
+factory_boy==2.12.0
+pylint
+pylint-django
+--pre black

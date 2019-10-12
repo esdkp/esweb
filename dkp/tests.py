@@ -1,8 +1,9 @@
 import datetime
 
 from django.test import TestCase
+from eq.factories import CharacterFactory
 from eq.models import Item, Event, Character
-from .models import Loot, Raid, Raider
+from .models import Loot, Raid
 
 
 class RaidTestCase(TestCase):
@@ -12,9 +13,11 @@ class RaidTestCase(TestCase):
         Event.objects.create(name="Awesome Event")
 
     def test_raid_loot(self):
-        raid = Raid.objects.create(event=Event.objects.get(name="Awesome Event"),
-                                   date=datetime.datetime.now().date(),
-                                   attendance_value=1)
+        raid = Raid.objects.create(
+            event=Event.objects.get(name="Awesome Event"),
+            date=datetime.datetime.now().date(),
+            attendance_value=1,
+        )
         Loot.objects.create(item=Item.objects.get(name="Awesome Loot"), raid=raid)
         Loot.objects.create(item=Item.objects.get(name="Less Awesome Loot"), raid=raid)
         Loot.objects.create(item=Item.objects.get(name="Less Awesome Loot"), raid=raid)
@@ -22,12 +25,26 @@ class RaidTestCase(TestCase):
         self.assertEqual(len(raid.loot()), 3)
 
     def test_raid_dkp_value(self):
-        raid = Raid.objects.create(event=Event.objects.get(name="Awesome Event"),
-                                   date=datetime.datetime.now().date(),
-                                   attendance_value=1)
-        Loot.objects.create(item=Item.objects.get(name="Awesome Loot"), raid=raid, dkp=Item.objects.get(name="Awesome Loot").dkp)
-        Loot.objects.create(item=Item.objects.get(name="Less Awesome Loot"), raid=raid, dkp=Item.objects.get(name="Less Awesome Loot").dkp)
-        Loot.objects.create(item=Item.objects.get(name="Less Awesome Loot"), raid=raid, dkp=Item.objects.get(name="Less Awesome Loot").dkp)
+        raid = Raid.objects.create(
+            event=Event.objects.get(name="Awesome Event"),
+            date=datetime.datetime.now().date(),
+            attendance_value=1,
+        )
+        Loot.objects.create(
+            item=Item.objects.get(name="Awesome Loot"),
+            raid=raid,
+            dkp=Item.objects.get(name="Awesome Loot").dkp,
+        )
+        Loot.objects.create(
+            item=Item.objects.get(name="Less Awesome Loot"),
+            raid=raid,
+            dkp=Item.objects.get(name="Less Awesome Loot").dkp,
+        )
+        Loot.objects.create(
+            item=Item.objects.get(name="Less Awesome Loot"),
+            raid=raid,
+            dkp=Item.objects.get(name="Less Awesome Loot").dkp,
+        )
 
         dkp = raid.dkp()
 
@@ -35,8 +52,19 @@ class RaidTestCase(TestCase):
         self.assertEqual(dkp, 100.0)
 
     def test_dkp_per_person_with_no_raiders(self):
-        raid = Raid.objects.create(event=Event.objects.get(name="Awesome Event"),
-                                   date=datetime.datetime.now().date(),
-                                   attendance_value=1)
+        raid = Raid.objects.create(
+            event=Event.objects.get(name="Awesome Event"),
+            date=datetime.datetime.now().date(),
+            attendance_value=1,
+        )
 
         self.assertEqual(raid.dkp_per_person(), 0.0)
+
+
+class RaiderTestCase(TestCase):
+    def setUp(self):
+        characters = CharacterFactory()
+        characters.create_batch(10)
+
+    def test_character_factory(self):
+        assert len(Character.objects.get()) == 10

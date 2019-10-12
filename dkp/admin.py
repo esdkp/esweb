@@ -1,3 +1,6 @@
+"""
+Django Admin site configuration for DKP app
+"""
 from django.contrib import admin
 from . import models
 

@@ -1,3 +1,6 @@
+"""
+Django Admin site configuration for EQ app
+"""
 from django.contrib import admin
 from eq import models
 
