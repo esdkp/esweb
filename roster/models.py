@@ -7,5 +7,5 @@ class Person(models.Model):
     characters = models.ManyToManyField(eq.models.Character, blank=True)
 
     class Meta:
-        verbose_name = 'Person'
-        verbose_name_plural = 'People'
+        verbose_name = "Person"
+        verbose_name_plural = "People"
