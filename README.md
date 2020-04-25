@@ -28,3 +28,70 @@ This should load:
 - Servers
 - Expansions (through TBL)
 - Raid Events (EOK, ROS, and TBL)
+
+# Specification
+
+So, what does this API need to do?  It will have two consumers, itself as an informational website, and the ESDKP desktop client.
+
+## ESDKP Client Actions
+
+The ESDKP client needs to able to do the following things as of the current version:
+
+1. Retrieve DKP and Attendance for a player
+2. Create a raid event
+3. Pull a list of loot and their values
+4. Load an existing raid event
+5. Update an existing raid event
+6. Generate a raid report (to be deprecated with the website)
+
+Features that will need to be added to work with the new model layout:
+
+1. Understanding the difference of an event and a raid - no more arbitrary event names.
+
+Eventual features might include:
+
+1. Knowing context of a raid (expansion, specific event) to filter loot
+
+We need to provide API endpoints to do the following
+
+## Plan of action
+
+To keep things simple, the ESDKP client will only interact with a few models - a full raid model, events, characters, and items.
+
+In this way, we can keep the logic of segregating a "character" versus understanding a raid attendee, for example, without precluding adding more advanced logic at a future date.
+
+In essence
+
+## Planned API endpoints
+
+### `GET /raid/{id}`
+
+`id` - an integer id of a specific raid event, optional
+
+Returns a JSON representation of a raid including the raid details, attendees, and loots.  With no {id}, returns a list of known raids.
+
+### `POST /raid/{id}`
+
+Expects JSON data for required `Raid` model attributes.
+
+Will create a new raid if no `id` is given, otherwise will overwrite the details for the given raid id, if valid.
+
+### `GET /character/{id}`
+
+Returns a JSON representation of a specific character given an `id`, or returns a list of known characters.
+
+### `POST /character/{id}`
+
+Expects a JSON representation of a character as data, and will create a new character if no `id` given, or update a character given a valid `id`
+
+### `GET /item/{id}`
+
+Returns a JSON representation of a specific ote, given an `id`, or returns a list of known items.
+
+### `POST /item/{id}`
+
+Expects a JSON representation of a character as data, and will create a new character if no `id` given, or update a character given a valid `id`
+
+### `GET /event/`
+
+Returns a JSON list of known events.
