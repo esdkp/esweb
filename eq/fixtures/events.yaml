@@ -146,3 +146,48 @@
   fields:
     name: "Gnome Memorial Mountain: Mechagnomic Whirlrender"
     expansion: 25
+- model: eq.Event
+  pk: 31
+  fields:
+    name: "Eastern Wastes: Griklor the Restless"
+    expansion: 26
+- model: eq.Event
+  pk: 32
+  fields:
+    name: "Eastern Wastes: Servant of the Sleeper"
+    expansion: 26
+- model: eq.Event
+  pk: 33
+  fields:
+    name: "Great Divide: Restless Assault"
+    expansion: 26
+- model: eq.Event
+  pk: 34
+  fields:
+    name: "Tower of Frozen Shadow: Heart of Frozen Shadow"
+    expansion: 26
+- model: eq.Event
+  pk: 35
+  fields:
+    name: "Tower of Frozen Shadow: Till Death Do Us Part"
+    expansion: 26
+- model: eq.Event
+  pk: 36
+  fields:
+    name: "Tower of Frozen Shadow: Tserrina Syl'Tor"
+    expansion: 26
+- model: eq.Event
+  pk: 37
+  fields:
+    name: "Velketor's Labyrinth: Seeking the Sorcerer"
+    expansion: 26
+- model: eq.Event
+  pk: 37
+  fields:
+    name: "Kael Drakkel: Derakor"
+    expansion: 26
+- model: eq.Event
+  pk: 38
+  fields:
+    name: "Kael Drakkel: Avatar of War"
+    expansion: 26

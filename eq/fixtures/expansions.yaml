@@ -123,3 +123,8 @@
   fields:
     name: "The Burning Lands"
     short_name: "TBL"
+- model: eq.Expansion
+  pk: 26
+  fields:
+    name: "Torment of Velious"
+    short_name: "TOV"
