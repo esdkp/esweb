@@ -4,9 +4,14 @@ from django.urls import path
 from rest_framework import routers
 import eq.views
 
-admin.site.site_header = "Eternal Sovereign Administration"
+admin.site.site_header = "Eternal Sovereign DKP Administration"
 router = routers.DefaultRouter()
 router.register(r"characters", eq.views.CharacterViewSet)
+router.register(r"classes", eq.views.KlassViewSet)
+router.register(r"expansions", eq.views.ExpansionViewSet)
+router.register(r"guilds", eq.views.GuildViewSet)
+router.register(r"races", eq.views.RaceViewSet)
+router.register(r"servers", eq.views.ServerViewSet)
 
 urlpatterns = [
     url(r"^admin/", admin.site.urls),
