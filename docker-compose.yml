@@ -2,8 +2,10 @@ version: '3'
 
 services:
   postgres:
-    image: postgres:11
+    image: postgres:12
     restart: always
+    environment:
+      - POSTGRES_PASSWORD=postgres
 
   web:
     restart: always
@@ -19,6 +21,6 @@ services:
     volumes:
       - ./:/code
     ports:
-      - 8080:8000
+      - 8000:8000
     depends_on:
       - postgres
