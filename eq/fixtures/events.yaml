@@ -182,12 +182,12 @@
     name: "Velketor's Labyrinth: Seeking the Sorcerer"
     expansion: 26
 - model: eq.Event
-  pk: 37
+  pk: 38
   fields:
     name: "Kael Drakkel: Derakor"
     expansion: 26
 - model: eq.Event
-  pk: 38
+  pk: 39
   fields:
     name: "Kael Drakkel: Avatar of War"
     expansion: 26
