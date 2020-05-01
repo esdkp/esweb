@@ -13,6 +13,19 @@ I'm using this as a tool to learn Django programming and generally flex my menta
 ## Contributing
 I welcome any contributions folks want to bring to the table.  I would love to make this generic and configurable so any guild could use it, and use our DKP system as wanted.  While there is already a great EQDKP project, it doesn't have the interface and rules flexibility we wanted.  Please fork and send me a pull request with your code.  I ask that you make sure all unit tests pass, and that you don't skimp on writing your own tests as needed.
 
+### Formatting
+All python in this project is auto-formatted using `black` with a line length of 100.  If you use VSCode, you can configure that as follows in your `settings.json`:
+```
+{
+    "python.formatting.provider": "black",
+    "python.formatting.blackPath": "/usr/local/bin/black",
+    "python.formatting.blackArgs": [
+        "--line-length=100"
+    ],
+}
+```
+Obviously, adjust your blackPath as necessary.
+
 ## Requirements
 I develop on a Mac, but this stuff should all work on any operating system that can run docker and docker-compose.
 
