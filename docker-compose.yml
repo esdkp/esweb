@@ -18,8 +18,11 @@ services:
       context: ./
       args:
         - BUILD_COMMIT_SHA=localdev
-    command: python wait_for_postgres.py && pip install -r requirements.txt &&
-             ./manage.py migrate && ./manage.py runserver 0.0.0.0:8000
+    command: >-
+      python wait_for_postgres.py &&
+      pip install -r requirements.txt &&
+      ./manage.py migrate &&
+      ./manage.py runserver 0.0.0.0:8000
     volumes:
       - ./:/code
     ports:
