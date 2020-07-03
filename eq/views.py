@@ -1,6 +1,7 @@
 """
 Views for EQ app
 """
+from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import viewsets
 from .models import Character, Expansion, Guild, Klass, Race, Server, Event
 from .serializers import (
@@ -75,3 +76,5 @@ class EventViewSet(viewsets.ModelViewSet):
 
     queryset = Event.objects.all()
     serializer_class = EventSerializer
+    filter_backends = [DjangoFilterBackend]
+    filterset_fields = ['expansion']

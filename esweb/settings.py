@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     "roster",
     "dkp",
     "rest_framework",
+    "django_filters",
 ]
 
 MIDDLEWARE = [
