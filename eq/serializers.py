@@ -1,12 +1,16 @@
-from .models import Character, Expansion, Guild, Klass, Race, Server
+from .models import Character, Expansion, Guild, Klass, Race, Server, Event
 from rest_framework import serializers
 
 
 class CharacterSerializer(serializers.HyperlinkedModelSerializer):
     eqclass = serializers.StringRelatedField(read_only=True)
     eqrace = serializers.StringRelatedField(read_only=True)
-    guild = serializers.HyperlinkedRelatedField(view_name="guild-detail", read_only=True)
-    server = serializers.HyperlinkedRelatedField(view_name="server-detail", read_only=True)
+    guild = serializers.HyperlinkedRelatedField(
+        view_name="guild-detail", read_only=True
+    )
+    server = serializers.HyperlinkedRelatedField(
+        view_name="server-detail", read_only=True
+    )
 
     class Meta:
         model = Character
@@ -41,4 +45,12 @@ class RaceSerializer(serializers.ModelSerializer):
 class ServerSerializer(serializers.ModelSerializer):
     class Meta:
         model = Server
+        fields = "__all__"
+
+
+class EventSerializer(serializers.ModelSerializer):
+    # expansion = serializers.StringRelatedField()
+
+    class Meta:
+        model = Event
         fields = "__all__"

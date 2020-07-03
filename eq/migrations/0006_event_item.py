@@ -6,26 +6,61 @@ import django.db.models.deletion
 
 class Migration(migrations.Migration):
 
-    dependencies = [
-        ('eq', '0005_character_server'),
-    ]
+    dependencies = [("eq", "0005_character_server")]
 
     operations = [
         migrations.CreateModel(
-            name='Event',
+            name="Event",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.TextField()),
-                ('expansion', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='eq.Expansion')),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("name", models.TextField()),
+                (
+                    "expansion",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE, to="eq.Expansion"
+                    ),
+                ),
             ],
         ),
         migrations.CreateModel(
-            name='Item',
+            name="Item",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.TextField()),
-                ('event', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to='eq.Event')),
-                ('expansion', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to='eq.Expansion')),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("name", models.TextField()),
+                (
+                    "event",
+                    models.ForeignKey(
+                        blank=True,
+                        null=True,
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to="eq.Event",
+                    ),
+                ),
+                (
+                    "expansion",
+                    models.ForeignKey(
+                        blank=True,
+                        null=True,
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to="eq.Expansion",
+                    ),
+                ),
             ],
         ),
     ]

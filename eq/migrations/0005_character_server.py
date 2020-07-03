@@ -8,15 +8,15 @@ import django.db.models.deletion
 
 class Migration(migrations.Migration):
 
-    dependencies = [
-        ('eq', '0004_auto_20170408_0109'),
-    ]
+    dependencies = [("eq", "0004_auto_20170408_0109")]
 
     operations = [
         migrations.AddField(
-            model_name='character',
-            name='server',
-            field=models.ForeignKey(default=1, on_delete=django.db.models.deletion.CASCADE, to='eq.Server'),
+            model_name="character",
+            name="server",
+            field=models.ForeignKey(
+                default=1, on_delete=django.db.models.deletion.CASCADE, to="eq.Server"
+            ),
             preserve_default=False,
-        ),
+        )
     ]

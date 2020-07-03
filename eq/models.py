@@ -124,7 +124,9 @@ class Event(models.Model):
     """
 
     name = models.TextField()
-    expansion = models.ForeignKey(Expansion, on_delete=models.CASCADE, blank=True, null=True)
+    expansion = models.ForeignKey(
+        Expansion, on_delete=models.CASCADE, blank=True, null=True
+    )
 
     def __str__(self):
         return self.name
@@ -137,7 +139,9 @@ class Item(models.Model):
 
     name = models.TextField()
     event = models.ForeignKey(Event, on_delete=models.CASCADE, blank=True, null=True)
-    expansion = models.ForeignKey(Expansion, on_delete=models.CASCADE, blank=True, null=True)
+    expansion = models.ForeignKey(
+        Expansion, on_delete=models.CASCADE, blank=True, null=True
+    )
     dkp = models.FloatField(default=0)
 
     def get_expansion(self):

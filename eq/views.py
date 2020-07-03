@@ -2,7 +2,7 @@
 Views for EQ app
 """
 from rest_framework import viewsets
-from .models import Character, Expansion, Guild, Klass, Race, Server
+from .models import Character, Expansion, Guild, Klass, Race, Server, Event
 from .serializers import (
     CharacterSerializer,
     ExpansionSerializer,
@@ -10,6 +10,7 @@ from .serializers import (
     KlassSerializer,
     RaceSerializer,
     ServerSerializer,
+    EventSerializer,
 )
 
 
@@ -65,3 +66,12 @@ class ServerViewSet(viewsets.ModelViewSet):
 
     queryset = Server.objects.all()
     serializer_class = ServerSerializer
+
+
+class EventViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint for classes in the eq database
+    """
+
+    queryset = Event.objects.all()
+    serializer_class = EventSerializer

@@ -10,57 +10,81 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='Expansion',
+            name="Expansion",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.TextField()),
-                ('short_name', models.TextField(unique=True)),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("name", models.TextField()),
+                ("short_name", models.TextField(unique=True)),
             ],
-            options={
-                'verbose_name': 'Expansion',
-                'verbose_name_plural': 'Expansions',
-            },
+            options={"verbose_name": "Expansion", "verbose_name_plural": "Expansions"},
         ),
         migrations.CreateModel(
-            name='Flag',
+            name="Flag",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.TextField()),
-                ('description', models.TextField(blank=True)),
-                ('expansion', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='eq.Expansion')),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("name", models.TextField()),
+                ("description", models.TextField(blank=True)),
+                (
+                    "expansion",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE, to="eq.Expansion"
+                    ),
+                ),
             ],
-            options={
-                'verbose_name': 'Flag',
-                'verbose_name_plural': 'Flags',
-            },
+            options={"verbose_name": "Flag", "verbose_name_plural": "Flags"},
         ),
         migrations.CreateModel(
-            name='Klass',
+            name="Klass",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.TextField()),
-                ('short_name', models.TextField(unique=True)),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("name", models.TextField()),
+                ("short_name", models.TextField(unique=True)),
             ],
-            options={
-                'verbose_name': 'Class',
-                'verbose_name_plural': 'Classes',
-            },
+            options={"verbose_name": "Class", "verbose_name_plural": "Classes"},
         ),
         migrations.CreateModel(
-            name='Race',
+            name="Race",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.TextField()),
-                ('short_name', models.TextField(unique=True)),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("name", models.TextField()),
+                ("short_name", models.TextField(unique=True)),
             ],
-            options={
-                'verbose_name': 'Race',
-                'verbose_name_plural': 'Races',
-            },
+            options={"verbose_name": "Race", "verbose_name_plural": "Races"},
         ),
     ]

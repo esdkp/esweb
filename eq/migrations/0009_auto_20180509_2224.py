@@ -5,14 +5,10 @@ from django.db import migrations
 
 class Migration(migrations.Migration):
 
-    dependencies = [
-        ('eq', '0008_auto_20180502_2335'),
-    ]
+    dependencies = [("eq", "0008_auto_20180502_2335")]
 
     operations = [
         migrations.RenameField(
-            model_name='item',
-            old_name='default_value',
-            new_name='dkp',
-        ),
+            model_name="item", old_name="default_value", new_name="dkp"
+        )
     ]

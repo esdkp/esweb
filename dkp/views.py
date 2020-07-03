@@ -25,7 +25,9 @@ class RaidsView(ListView):
         """
         latest_raid = self.get_queryset().latest("date")
         response = HttpResponse("")
-        response["Last-Modified"] = latest_raid.date.strftime("%a, %d %b %Y %H:%M:%S GMT")
+        response["Last-Modified"] = latest_raid.date.strftime(
+            "%a, %d %b %Y %H:%M:%S GMT"
+        )
         return response
 
 

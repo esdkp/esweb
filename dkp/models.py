@@ -56,7 +56,9 @@ class Loot(models.Model):
     # The amount of DKP the item was sold for
     dkp = models.FloatField(default=0)
     # The character that won the item; if blank, item rotted and DKP should be zero probably?
-    character = models.ForeignKey(Character, on_delete=models.CASCADE, blank=True, null=True)
+    character = models.ForeignKey(
+        Character, on_delete=models.CASCADE, blank=True, null=True
+    )
 
     def __str__(self):
         return "{} {}".format(self.raid, self.item)

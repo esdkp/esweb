@@ -6,14 +6,17 @@ import django.db.models.deletion
 
 class Migration(migrations.Migration):
 
-    dependencies = [
-        ('eq', '0007_item_default_value'),
-    ]
+    dependencies = [("eq", "0007_item_default_value")]
 
     operations = [
         migrations.AlterField(
-            model_name='event',
-            name='expansion',
-            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to='eq.Expansion'),
-        ),
+            model_name="event",
+            name="expansion",
+            field=models.ForeignKey(
+                blank=True,
+                null=True,
+                on_delete=django.db.models.deletion.CASCADE,
+                to="eq.Expansion",
+            ),
+        )
     ]

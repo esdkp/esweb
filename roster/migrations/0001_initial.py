@@ -10,24 +10,37 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-        ('eq', '0001_initial'),
-    ]
+    dependencies = [("eq", "0001_initial")]
 
     operations = [
         migrations.CreateModel(
-            name='EQCharacter',
+            name="EQCharacter",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.TextField(unique=True)),
-                ('surname', models.TextField(blank=True)),
-                ('eqclass', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='eq.Klass')),
-                ('eqflags', models.ManyToManyField(blank=True, to='eq.Flag')),
-                ('eqrace', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='eq.Race')),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("name", models.TextField(unique=True)),
+                ("surname", models.TextField(blank=True)),
+                (
+                    "eqclass",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE, to="eq.Klass"
+                    ),
+                ),
+                ("eqflags", models.ManyToManyField(blank=True, to="eq.Flag")),
+                (
+                    "eqrace",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE, to="eq.Race"
+                    ),
+                ),
             ],
-            options={
-                'verbose_name': 'Character',
-                'verbose_name_plural': 'Characters',
-            },
-        ),
+            options={"verbose_name": "Character", "verbose_name_plural": "Characters"},
+        )
     ]

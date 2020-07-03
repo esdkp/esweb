@@ -5,14 +5,8 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
 
-    dependencies = [
-        ('dkp', '0004_raider'),
-    ]
+    dependencies = [("dkp", "0004_raider")]
 
     operations = [
-        migrations.AlterField(
-            model_name='raid',
-            name='date',
-            field=models.DateField(),
-        ),
+        migrations.AlterField(model_name="raid", name="date", field=models.DateField())
     ]

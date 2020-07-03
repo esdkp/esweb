@@ -8,49 +8,82 @@ import django.db.models.deletion
 
 class Migration(migrations.Migration):
 
-    dependencies = [
-        ('eq', '0001_initial'),
-    ]
+    dependencies = [("eq", "0001_initial")]
 
     operations = [
         migrations.CreateModel(
-            name='Character',
+            name="Character",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.TextField(unique=True)),
-                ('surname', models.TextField(blank=True)),
-                ('eqclass', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='eq.Klass')),
-                ('eqflags', models.ManyToManyField(blank=True, to='eq.Flag')),
-                ('eqrace', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='eq.Race')),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("name", models.TextField(unique=True)),
+                ("surname", models.TextField(blank=True)),
+                (
+                    "eqclass",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE, to="eq.Klass"
+                    ),
+                ),
+                ("eqflags", models.ManyToManyField(blank=True, to="eq.Flag")),
+                (
+                    "eqrace",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE, to="eq.Race"
+                    ),
+                ),
             ],
-            options={
-                'verbose_name': 'Character',
-                'verbose_name_plural': 'Characters',
-            },
+            options={"verbose_name": "Character", "verbose_name_plural": "Characters"},
         ),
         migrations.CreateModel(
-            name='Guild',
+            name="Guild",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.TextField(unique=True)),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("name", models.TextField(unique=True)),
             ],
         ),
         migrations.CreateModel(
-            name='Server',
+            name="Server",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.TextField(unique=True)),
-                ('short_name', models.TextField(unique=True)),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("name", models.TextField(unique=True)),
+                ("short_name", models.TextField(unique=True)),
             ],
         ),
         migrations.AddField(
-            model_name='guild',
-            name='server',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='eq.Server'),
+            model_name="guild",
+            name="server",
+            field=models.ForeignKey(
+                on_delete=django.db.models.deletion.CASCADE, to="eq.Server"
+            ),
         ),
         migrations.AddField(
-            model_name='character',
-            name='guild',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='eq.Guild'),
+            model_name="character",
+            name="guild",
+            field=models.ForeignKey(
+                on_delete=django.db.models.deletion.CASCADE, to="eq.Guild"
+            ),
         ),
     ]

@@ -9,6 +9,6 @@ app_name = "dkp"
 
 urlpatterns = [
     url(r"^$", views.RaidsView.as_view(), name="index"),
-    path("raid/add/", views.RaidCreateView.as_view(), name="raid-add"),
-    path("raid/<pk>/", views.RaidDetailView.as_view(), name="raid-view"),
+    path("raids/add/", views.RaidCreateView.as_view(), name="raid-add"),
+    path("raids/<pk>/", views.RaidDetailView.as_view(), name="raid-view"),
 ]

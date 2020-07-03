@@ -8,14 +8,14 @@ import django.db.models.deletion
 
 class Migration(migrations.Migration):
 
-    dependencies = [
-        ('eq', '0002_auto_20170407_1716'),
-    ]
+    dependencies = [("eq", "0002_auto_20170407_1716")]
 
     operations = [
         migrations.AlterField(
-            model_name='character',
-            name='guild',
-            field=models.ForeignKey(blank=True, on_delete=django.db.models.deletion.CASCADE, to='eq.Guild'),
-        ),
+            model_name="character",
+            name="guild",
+            field=models.ForeignKey(
+                blank=True, on_delete=django.db.models.deletion.CASCADE, to="eq.Guild"
+            ),
+        )
     ]

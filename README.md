@@ -2,7 +2,6 @@
 This project is for an EverQuest guild on the Bertoxxulous server.  It's goals are:
 
 - Roster
-- News Page
 - DKP System
 - Integration with phpbb3
 - API for use with our desktop app to assist in handling DKP
@@ -39,8 +38,8 @@ This should load:
 - Classes
 - Races
 - Servers
-- Expansions (through TBL)
-- Raid Events (EOK, ROS, and TBL)
+- Expansions (through TOV)
+- Raid Events (EOK, ROS, TBL, and TOV)
 
 # Specification
 
@@ -77,34 +76,34 @@ In essence
 
 ## Planned API endpoints
 
-### `GET /raid/{id}`
+### `GET /raids/{id}`
 
 `id` - an integer id of a specific raid event, optional
 
 Returns a JSON representation of a raid including the raid details, attendees, and loots.  With no {id}, returns a list of known raids.
 
-### `POST /raid/{id}`
+### `POST /raids/{id}`
 
 Expects JSON data for required `Raid` model attributes.
 
 Will create a new raid if no `id` is given, otherwise will overwrite the details for the given raid id, if valid.
 
-### `GET /character/{id}`
+### `GET /characters/{id}`
 
 Returns a JSON representation of a specific character given an `id`, or returns a list of known characters.
 
-### `POST /character/{id}`
+### `POST /characters/{id}`
 
 Expects a JSON representation of a character as data, and will create a new character if no `id` given, or update a character given a valid `id`
 
-### `GET /item/{id}`
+### `GET /items/{id}`
 
 Returns a JSON representation of a specific ote, given an `id`, or returns a list of known items.
 
-### `POST /item/{id}`
+### `POST /items/{id}`
 
 Expects a JSON representation of a character as data, and will create a new character if no `id` given, or update a character given a valid `id`
 
-### `GET /event/`
+### `GET /events/`
 
 Returns a JSON list of known events.

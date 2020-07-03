@@ -7,18 +7,36 @@ import django.db.models.deletion
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('eq', '0009_auto_20180509_2224'),
-        ('dkp', '0003_auto_20180511_1314'),
+        ("eq", "0009_auto_20180509_2224"),
+        ("dkp", "0003_auto_20180511_1314"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Raider',
+            name="Raider",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('character', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='eq.Character')),
-                ('loot', models.ManyToManyField(to='dkp.Loot')),
-                ('raid', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='dkp.Raid')),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "character",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE, to="eq.Character"
+                    ),
+                ),
+                ("loot", models.ManyToManyField(to="dkp.Loot")),
+                (
+                    "raid",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE, to="dkp.Raid"
+                    ),
+                ),
             ],
-        ),
+        )
     ]

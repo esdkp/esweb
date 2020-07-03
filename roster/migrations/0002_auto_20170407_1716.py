@@ -7,36 +7,27 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
 
-    dependencies = [
-        ('eq', '0002_auto_20170407_1716'),
-        ('roster', '0001_initial'),
-    ]
+    dependencies = [("eq", "0002_auto_20170407_1716"), ("roster", "0001_initial")]
 
     operations = [
         migrations.CreateModel(
-            name='Person',
+            name="Person",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('characters', models.ManyToManyField(blank=True, to='eq.Character')),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("characters", models.ManyToManyField(blank=True, to="eq.Character")),
             ],
-            options={
-                'verbose_name': 'Person',
-                'verbose_name_plural': 'People',
-            },
+            options={"verbose_name": "Person", "verbose_name_plural": "People"},
         ),
-        migrations.RemoveField(
-            model_name='eqcharacter',
-            name='eqclass',
-        ),
-        migrations.RemoveField(
-            model_name='eqcharacter',
-            name='eqflags',
-        ),
-        migrations.RemoveField(
-            model_name='eqcharacter',
-            name='eqrace',
-        ),
-        migrations.DeleteModel(
-            name='EQCharacter',
-        ),
+        migrations.RemoveField(model_name="eqcharacter", name="eqclass"),
+        migrations.RemoveField(model_name="eqcharacter", name="eqflags"),
+        migrations.RemoveField(model_name="eqcharacter", name="eqrace"),
+        migrations.DeleteModel(name="EQCharacter"),
     ]

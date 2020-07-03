@@ -6,6 +6,8 @@ services:
     restart: always
     environment:
       - POSTGRES_PASSWORD=postgres
+    volumes:
+      - esdkp-postgres:/var/lib/postgreql/data
 
   web:
     restart: always
@@ -24,3 +26,6 @@ services:
       - 8000:8000
     depends_on:
       - postgres
+
+volumes:
+  esdkp-postgres:

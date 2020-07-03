@@ -5,14 +5,10 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
 
-    dependencies = [
-        ('eq', '0006_event_item'),
-    ]
+    dependencies = [("eq", "0006_event_item")]
 
     operations = [
         migrations.AddField(
-            model_name='item',
-            name='default_value',
-            field=models.FloatField(default=0),
-        ),
+            model_name="item", name="default_value", field=models.FloatField(default=0)
+        )
     ]

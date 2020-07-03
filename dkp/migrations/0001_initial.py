@@ -8,31 +8,57 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-        ('eq', '0007_item_default_value'),
-    ]
+    dependencies = [("eq", "0007_item_default_value")]
 
     operations = [
         migrations.CreateModel(
-            name='Loot',
+            name="Loot",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('dkp_value', models.FloatField()),
-                ('item', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='eq.Item')),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("dkp_value", models.FloatField()),
+                (
+                    "item",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE, to="eq.Item"
+                    ),
+                ),
             ],
         ),
         migrations.CreateModel(
-            name='Raid',
+            name="Raid",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('date', models.DateTimeField()),
-                ('attendance_value', models.FloatField()),
-                ('event', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='eq.Event')),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("date", models.DateTimeField()),
+                ("attendance_value", models.FloatField()),
+                (
+                    "event",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE, to="eq.Event"
+                    ),
+                ),
             ],
         ),
         migrations.AddField(
-            model_name='loot',
-            name='raid',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='dkp.Raid'),
+            model_name="loot",
+            name="raid",
+            field=models.ForeignKey(
+                on_delete=django.db.models.deletion.CASCADE, to="dkp.Raid"
+            ),
         ),
     ]
