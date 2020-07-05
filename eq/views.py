@@ -81,7 +81,7 @@ class EventViewSet(viewsets.ModelViewSet):
     filterset_fields = ["expansion"]
 
 
-class EventViewSet(viewsets.ModelViewSet):
+class ItemViewSet(viewsets.ModelViewSet):
     """
     API endpoint for classes in the eq database
     """
