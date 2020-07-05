@@ -2,6 +2,8 @@ FROM python:3.8 as builder
 
 RUN apt-get install -y --no-install-recommends default-libmysqlclient-dev
 
+ENV PATH=/root/.local/bin:$PATH
+
 COPY ./requirements.txt /requirements.txt
 RUN pip install --user -r /requirements.txt
 
