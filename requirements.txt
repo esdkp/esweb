@@ -6,6 +6,7 @@ gunicorn==19.9.0
 mysqlclient==2.0.1
 pytz==2017.3
 PyYAML>=4.2b1
+whitenoise==5.1.0
 
 # Dev packages
 factory_boy==2.12.0
