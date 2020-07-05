@@ -3,7 +3,7 @@ djangorestframework==3.11.0
 django-filter==2.3.0
 dumb-init==1.2.2
 gunicorn==19.9.0
-psycopg2-binary==2.8.5
+mysqlclient==2.0.1
 pytz==2017.3
 PyYAML>=4.2b1
 

@@ -16,5 +16,5 @@ fi
 # Use dumb-init to ensure proper handling of signals, zombies, etc.
 # See https://github.com/Yelp/dumb-init
 
-echo "Running command: /usr/local/bin/dumb-init ${@@Q}"
-exec /usr/local/bin/dumb-init "$@"
+echo "Running command: /root/.local/bin/dumb-init ${@@Q}"
+exec /root/.local/bin/dumb-init "$@"

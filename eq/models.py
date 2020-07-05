@@ -10,8 +10,8 @@ class Klass(models.Model):
     Representation of EverQuest Classes
     """
 
-    name = models.TextField()
-    short_name = models.TextField(unique=True)
+    name = models.CharField(max_length=255)
+    short_name = models.CharField(max_length=3, unique=True)
 
     class Meta:
         verbose_name = "Class"
@@ -26,8 +26,8 @@ class Race(models.Model):
     Representation of EverQuest Races
     """
 
-    name = models.TextField()
-    short_name = models.TextField(unique=True)
+    name = models.CharField(max_length=255)
+    short_name = models.CharField(max_length=3, unique=True)
 
     class Meta:
         verbose_name = "Race"
@@ -42,8 +42,8 @@ class Expansion(models.Model):
     Representation of EverQuest Expansions
     """
 
-    name = models.TextField()
-    short_name = models.TextField(unique=True)
+    name = models.CharField(max_length=255)
+    short_name = models.CharField(max_length=3, unique=True)
 
     class Meta:
         verbose_name = "Expansion"
@@ -58,7 +58,7 @@ class Flag(models.Model):
     Representation of EverQuest Character Flags
     """
 
-    name = models.TextField()
+    name = models.CharField(max_length=255)
     description = models.TextField(blank=True)
     expansion = models.ForeignKey(Expansion, on_delete=models.CASCADE)
 
@@ -75,8 +75,8 @@ class Server(models.Model):
     Representation of EverQuest Servers
     """
 
-    name = models.TextField(unique=True)
-    short_name = models.TextField(unique=True)
+    name = models.CharField(max_length=255, unique=True)
+    short_name = models.CharField(max_length=255, unique=True)
 
     def __str__(self):
         return self.name
@@ -87,7 +87,7 @@ class Guild(models.Model):
     Representation of EverQuest Guilds
     """
 
-    name = models.TextField(unique=True)
+    name = models.CharField(max_length=255, unique=True)
     server = models.ForeignKey(Server, on_delete=models.CASCADE)
 
     def characters(self):
@@ -102,8 +102,8 @@ class Character(models.Model):
     Representation of EverQuest Character
     """
 
-    name = models.TextField(unique=True)
-    surname = models.TextField(blank=True, default="")
+    name = models.CharField(max_length=255, unique=True)
+    surname = models.CharField(max_length=255, blank=True, default="")
     eqclass = models.ForeignKey(Klass, on_delete=models.CASCADE)
     eqrace = models.ForeignKey(Race, on_delete=models.CASCADE)
     eqflags = models.ManyToManyField(Flag, blank=True)
@@ -123,7 +123,7 @@ class Event(models.Model):
     Representation of EverQuest "Event" eg. a raid instance or mission, a raid target, etc.
     """
 
-    name = models.TextField()
+    name = models.CharField(max_length=255)
     expansion = models.ForeignKey(
         Expansion, on_delete=models.CASCADE, blank=True, null=True
     )
@@ -137,7 +137,7 @@ class Item(models.Model):
     Representation of EverQuest Items
     """
 
-    name = models.TextField()
+    name = models.CharField(max_length=255)
     event = models.ForeignKey(Event, on_delete=models.CASCADE, blank=True, null=True)
     expansion = models.ForeignKey(
         Expansion, on_delete=models.CASCADE, blank=True, null=True
