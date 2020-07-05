@@ -13,6 +13,7 @@ router.register(r"guilds", eq.views.GuildViewSet)
 router.register(r"races", eq.views.RaceViewSet)
 router.register(r"servers", eq.views.ServerViewSet)
 router.register(r"events", eq.views.EventViewSet)
+router.register(r"items", eq.views.EventViewSet)
 
 urlpatterns = [
     url(r"^admin/", admin.site.urls),

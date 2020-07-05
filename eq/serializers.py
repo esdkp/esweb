@@ -1,4 +1,4 @@
-from .models import Character, Expansion, Guild, Klass, Race, Server, Event
+from .models import Character, Expansion, Guild, Klass, Race, Server, Event, Item
 from rest_framework import serializers
 
 
@@ -41,4 +41,10 @@ class ServerSerializer(serializers.ModelSerializer):
 class EventSerializer(serializers.ModelSerializer):
     class Meta:
         model = Event
+        fields = "__all__"
+
+
+class ItemSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Item
         fields = "__all__"
