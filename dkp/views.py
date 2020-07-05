@@ -5,10 +5,14 @@ from django.http import HttpResponse
 from django.urls import reverse_lazy
 from django.views.generic import ListView, DetailView
 from django.views.generic.edit import CreateView
-
-from .models import Raid
+from rest_framework import viewsets
+from .models import Raid, Loot, Raider
 from .forms import RaidCreateForm
-
+from .serializers import (
+    RaidSerializer,
+    LootSerializer,
+    RaiderSerializer,
+)
 
 class RaidsView(ListView):
     """
@@ -50,3 +54,31 @@ class RaidCreateView(CreateView):
     template_name = "dkp/raid_add.html"
     form_class = RaidCreateForm
     success_url = reverse_lazy("raid-view")
+
+
+
+class RaidViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint for raids in the eq database
+    """
+
+    queryset = Raid.objects.all()
+    serializer_class = RaidSerializer
+
+
+class LootViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint for assigned loot in the eq database
+    """
+
+    queryset = Loot.objects.all()
+    serializer_class = LootSerializer
+
+
+class RaiderViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint for raiders in the eq database
+    """
+
+    queryset = Raider.objects.all()
+    serializer_class = RaiderSerializer

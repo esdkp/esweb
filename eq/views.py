@@ -36,7 +36,7 @@ class ExpansionViewSet(viewsets.ModelViewSet):
 
 class GuildViewSet(viewsets.ModelViewSet):
     """
-    API endpoint for expansions in the eq database
+    API endpoint for guilds in the eq database
     """
 
     queryset = Guild.objects.all()
@@ -54,7 +54,7 @@ class KlassViewSet(viewsets.ModelViewSet):
 
 class RaceViewSet(viewsets.ModelViewSet):
     """
-    API endpoint for classes in the eq database
+    API endpoint for races in the eq database
     """
 
     queryset = Race.objects.all()
@@ -63,7 +63,7 @@ class RaceViewSet(viewsets.ModelViewSet):
 
 class ServerViewSet(viewsets.ModelViewSet):
     """
-    API endpoint for classes in the eq database
+    API endpoint for servers in the eq database
     """
 
     queryset = Server.objects.all()
@@ -72,7 +72,7 @@ class ServerViewSet(viewsets.ModelViewSet):
 
 class EventViewSet(viewsets.ModelViewSet):
     """
-    API endpoint for classes in the eq database
+    API endpoint for events in the eq database
     """
 
     queryset = Event.objects.all()
@@ -83,7 +83,7 @@ class EventViewSet(viewsets.ModelViewSet):
 
 class ItemViewSet(viewsets.ModelViewSet):
     """
-    API endpoint for classes in the eq database
+    API endpoint for items in the eq database
     """
 
     queryset = Item.objects.all()

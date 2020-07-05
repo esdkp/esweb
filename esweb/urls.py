@@ -3,6 +3,7 @@ from django.contrib import admin
 from django.urls import path
 from rest_framework import routers
 import eq.views
+import dkp.views
 
 admin.site.site_header = "Eternal Sovereign DKP Administration"
 router = routers.DefaultRouter()
@@ -14,6 +15,9 @@ router.register(r"races", eq.views.RaceViewSet)
 router.register(r"servers", eq.views.ServerViewSet)
 router.register(r"events", eq.views.EventViewSet)
 router.register(r"items", eq.views.ItemViewSet)
+router.register(r"raids", dkp.views.RaidViewSet)
+router.register(r"loots", dkp.views.LootViewSet)
+router.register(r"raiders", dkp.views.RaiderViewSet)
 
 urlpatterns = [
     url(r"^admin/", admin.site.urls),
