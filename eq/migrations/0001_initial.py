@@ -39,7 +39,7 @@ class Migration(migrations.Migration):
                     ),
                 ),
                 ("name", models.CharField(max_length=255)),
-                ("short_name", models.CharField(max_length=3, unique=True)),
+                ("short_name", models.CharField(max_length=4, unique=True)),
             ],
             options={"verbose_name": "Expansion", "verbose_name_plural": "Expansions",},
         ),

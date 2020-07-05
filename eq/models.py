@@ -43,7 +43,7 @@ class Expansion(models.Model):
     """
 
     name = models.CharField(max_length=255)
-    short_name = models.CharField(max_length=3, unique=True)
+    short_name = models.CharField(max_length=4, unique=True)
 
     class Meta:
         verbose_name = "Expansion"
