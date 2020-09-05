@@ -1,6 +1,7 @@
 {% if raid %}
 <h1>{{ raid.date }} - {{ raid.event.name }}</h1>
 <p>DKP Value: {{ raid.dkp }}</p>
+<p>DKP/Person: {{ raid.dkp_per_person }}</p>
 <p>Attendance Value: {{ raid.attendance_value }}</p>
 
 <h3>Loot</h3>
@@ -15,7 +16,7 @@
 <h3>Raiders</h3>
 {% if raid.raiders %}
 {% for raider in raid.raiders %}
-<li>{{ raider.name }}</li>
+<li>{{ raider.character }}</li>
 {% endfor %}
 {% else %}
 <li>No raiders found</li>

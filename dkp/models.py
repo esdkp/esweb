@@ -56,12 +56,10 @@ class Loot(models.Model):
     # The amount of DKP the item was sold for
     dkp = models.FloatField(default=0)
     # The character that won the item; if blank, item rotted and DKP should be zero probably?
-    character = models.ForeignKey(
-        Character, on_delete=models.CASCADE, blank=True, null=True
-    )
+    character = models.ForeignKey(Character, on_delete=models.CASCADE, blank=True, null=True)
 
     def __str__(self):
-        return "{} {}".format(self.raid, self.item)
+        return f"{self.raid} {self.item}"
 
 
 class Raider(models.Model):
@@ -71,7 +69,7 @@ class Raider(models.Model):
 
     character = models.ForeignKey(Character, on_delete=models.CASCADE)
     raid = models.ForeignKey(Raid, on_delete=models.CASCADE)
-    loot = models.ManyToManyField(Loot)
+    loot = models.ManyToManyField(Loot, blank=True, null=True)
 
     def spent(self):
         """
@@ -86,4 +84,4 @@ class Raider(models.Model):
         return self.raid.dkp() - self.spent()
 
     def __str__(self):
-        return self.character.name
+        return f"{self.character.name} - {self.raid}"
