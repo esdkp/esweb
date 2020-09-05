@@ -41,6 +41,8 @@ This should load:
 - Expansions (through TOV)
 - Raid Events (EOK, ROS, TBL, and TOV)
 
+There are also some example item fixtures as well.  Add `items` to the above command to install those as well.
+
 # Specification
 
 So, what does this API need to do?  It will have two consumers, itself as an informational website, and the ESDKP desktop client.
