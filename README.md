@@ -26,7 +26,22 @@ All python in this project is auto-formatted using `black` with a line length of
 Obviously, adjust your blackPath as necessary.
 
 ## Requirements
+
 I develop on a Mac, but this stuff should all work on any operating system that can run docker and docker-compose.
+
+## Running tests
+
+If you're using docker-compose for local development, the following commands should work out of the box
+
+```sh
+# Run the stack so mysql is available
+docker-compose up -d
+
+# Run the tests
+docker-compose exec web bash -c 'python manage.py test'
+```
+
+The django test framework tries to make a `test_esdkp` database, so MySQL is provided a startup script in `local-init.sql` that will add the needed permissions to the user specified in `localdev.env` so that Django's test framework can run.
 
 ## Seeding Fixture Data
 
