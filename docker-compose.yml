@@ -8,6 +8,7 @@ services:
       - localdev.env
     volumes:
       - esdkp-mysql:/var/lib/mysql
+      - ./local-init.sql:/docker-entrypoint-initdb.d/local-init.sql
 
   web:
     restart: always
