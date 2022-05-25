@@ -69,7 +69,7 @@ class Raider(models.Model):
 
     character = models.ForeignKey(Character, on_delete=models.CASCADE)
     raid = models.ForeignKey(Raid, on_delete=models.CASCADE)
-    loot = models.ManyToManyField(Loot, blank=True, null=True)
+    loot = models.ManyToManyField(Loot, blank=True)
 
     def spent(self):
         """
