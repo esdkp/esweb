@@ -1,6 +1,6 @@
-from django.conf.urls import include, url
+from django.conf.urls import include
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, re_path
 from rest_framework import routers
 import eq.views
 import dkp.views
@@ -20,9 +20,9 @@ router.register(r"loots", dkp.views.LootViewSet)
 router.register(r"raiders", dkp.views.RaiderViewSet)
 
 urlpatterns = [
-    url(r"^admin/", admin.site.urls),
-    url(r"^roster/", include("roster.urls", namespace="roster")),
-    url(r"^dkp/", include("dkp.urls", namespace="dkp")),
+    re_path(r"^admin/", admin.site.urls),
+    re_path(r"^roster/", include("roster.urls", namespace="roster")),
+    re_path(r"^dkp/", include("dkp.urls", namespace="dkp")),
     path("api/", include(router.urls)),
     path("api-auth/", include("rest_framework.urls", namespace="rest_framework")),
 ]
