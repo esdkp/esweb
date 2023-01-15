@@ -128,3 +128,18 @@
   fields:
     name: "Torment of Velious"
     short_name: "TOV"
+- model: eq.Expansion
+  pk: 27
+  fields:
+    name: "Claws of Veeshan"
+    short_name: "COV"
+- model: eq.Expansion
+  pk: 28
+  fields:
+    name: "Terror of Luclin"
+    short_name: "TOL"
+- model: eq.Expansion
+  pk: 29
+  fields:
+    name: "Night of Shadows"
+    short_name: "NOS"

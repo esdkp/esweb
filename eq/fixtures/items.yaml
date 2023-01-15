@@ -7,7 +7,7 @@
 - model: eq.Item
   pk: 2
   fields:
-    name: "LEsser Kromrif Etching"
+    name: "Lesser Kromrif Etching"
     expansion: 26
     dkp: 200
 - model: eq.Item

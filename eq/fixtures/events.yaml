@@ -191,3 +191,108 @@
   fields:
     name: "Kael Drakkel: Avatar of War"
     expansion: 26
+- model: eq.Event
+  pk: 40
+  fields:
+    name: "Klandicar and the New Brood"
+    expansion: 27
+- model: eq.Event
+  pk: 41
+  fields:
+    name: "Tantor"
+    expansion: 27
+- model: eq.Event
+  pk: 42
+  fields:
+    name: "Zlandicar Reborn"
+    expansion: 27
+- model: eq.Event
+  pk: 43
+  fields:
+    name: "Aaryonar"
+    expansion: 27
+- model: eq.Event
+  pk: 44
+  fields:
+    name: "Sontalak"
+    expansion: 27
+- model: eq.Event
+  pk: 45
+  fields:
+    name: "The Crusaders"
+    expansion: 27
+- model: eq.Event
+  pk: 46
+  fields:
+    name: "Amalgam Arbiter"
+    expansion: 27
+- model: eq.Event
+  pk: 47
+  fields:
+    name: "Defenders of the Tomb"
+    expansion: 27
+- model: eq.Event
+  pk: 48
+  fields:
+    name: "Vulak'Aerr"
+    expansion: 27
+- model: eq.Event
+  pk: 49
+  fields:
+    name: "Doomshade"
+    expansion: 28
+- model: eq.Event
+  pk: 50
+  fields:
+    name: "Netherbian Swarm Commander"
+    expansion: 28
+- model: eq.Event
+  pk: 51
+  fields:
+    name: "Zelnithak"
+    expansion: 28
+- model: eq.Event
+  pk: 52
+  fields:
+    name: "Free the Goranga"
+    expansion: 28
+- model: eq.Event
+  pk: 53
+  fields:
+    name: "Shei Vinitras"
+    expansion: 28
+- model: eq.Event
+  pk: 54
+  fields:
+    name: "Aten Ha Ra"
+    expansion: 28
+- model: eq.Event
+  pk: 55
+  fields:
+    name: "Close the Gate"
+    expansion: 28
+- model: eq.Event
+  pk: 56
+  fields:
+    name: "Oubliette of Light"
+    expansion: 28
+- model: eq.Event
+  pk: 57
+  fields:
+    name: "Primal Vampire"
+    expansion: 28
+- model: eq.Event
+  pk: 58
+  fields:
+    name: "Insatiable An Appetite"
+    expansion: 29
+- model: eq.Event
+  pk: 59
+  fields:
+    name: "Mean Streets"
+    expansion: 29
+- model: eq.Event
+  pk: 60
+  fields:
+    name: "Pit Fights"
+    expansion: 29
