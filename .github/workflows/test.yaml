@@ -1,0 +1,37 @@
+name: Tests
+
+on:
+  workflow_call:
+  workflow_dispatch:
+  push:
+    branches: [master,main]
+  pull_request:
+    branches: [master,main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    environment:
+      MYSQL_ROOT_PASSWORD: localdev
+      MYSQL_DATABASE: esdkp
+      MYSQL_USER: esdkp
+      MYSQL_PASSWORD: esdkp
+      DJANGO_SECRET_KEY: local
+      PYTHONDONTWRITEBYTECODE: 1
+      WAIT_HOSTS: "mysql:3306"
+      PYTHON_VERSION: "3.11"
+
+    services:
+      mysql:
+        image: mysql:5.6
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup the test stack
+        run: docker-compose up --build -d
+      
+      - name: Test
+        run: docker-compose exec web bash -c 'python manage.py test'
