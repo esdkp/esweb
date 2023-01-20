@@ -36,6 +36,13 @@
 
 	// Uncomment the next line to run commands after the container is created.
 	"postCreateCommand": "./manage.py migrate",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"ms-python.python"
+			]
+		}
+	},
 
 	// Configure tool-specific properties.
 	// "customizations": {},
