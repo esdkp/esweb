@@ -5,14 +5,22 @@ from django.http import HttpResponse
 from django.urls import reverse_lazy
 from django.views.generic import ListView, DetailView
 from django.views.generic.edit import CreateView
-from rest_framework import viewsets
+from rest_framework import viewsets, generics
 from .models import Raid, Loot, Raider
 from .forms import RaidCreateForm
 from .serializers import (
+    ImportSerializer,
     RaidSerializer,
     LootSerializer,
     RaiderSerializer,
 )
+
+class ImportView(viewsets.GenericViewSet):
+    serializer_class = ImportSerializer
+    
+    def create(self, request):
+        print('in post')
+        return HttpResponse("")
 
 class RaidsView(ListView):
     """

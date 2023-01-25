@@ -18,6 +18,7 @@ router.register(r"items", eq.views.ItemViewSet)
 router.register(r"raids", dkp.views.RaidViewSet)
 router.register(r"loots", dkp.views.LootViewSet)
 router.register(r"raiders", dkp.views.RaiderViewSet)
+router.register(r"import", dkp.views.ImportView, basename='import')
 
 urlpatterns = [
     re_path(r"^admin/", admin.site.urls),

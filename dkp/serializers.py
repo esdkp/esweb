@@ -18,3 +18,7 @@ class RaiderSerializer(serializers.ModelSerializer):
     class Meta:
         model = Raider
         fields = "__all__"
+
+class ImportSerializer(serializers.ListSerializer):
+    def create(self, validated_data):
+        return super().create(validated_data)
