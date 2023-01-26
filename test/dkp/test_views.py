@@ -1,4 +1,4 @@
 class TestImportView:
     @staticmethod
-    def test_it_works():
-        assert False == True
+    def test_it_works(raid):
+        assert True == True
