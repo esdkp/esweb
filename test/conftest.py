@@ -12,7 +12,7 @@ def test_user(django_user_model):
     return django_user_model.objects.create(username='bilbo_baggins', password='hunter2')
 
 @pytest.fixture
-def api_client(test_user) -> APIClient:
+def authenticated_client(test_user) -> APIClient:
     client = APIClient()
     client.force_login(test_user)
     yield client

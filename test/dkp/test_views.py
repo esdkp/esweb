@@ -8,12 +8,12 @@ class TestImportView:
     endpoint = '/api/import/'
 
     @staticmethod
-    def test_mike_understands_the_fixture_setup(api_client: APIClient, raid: Raid):
-        resp = api_client.get(f'/api/raids/{raid.event_id}', follow=True)
+    def test_mike_understands_the_fixture_setup(authenticated_client: APIClient, raid: Raid):
+        resp = authenticated_client.get(f'/api/raids/{raid.event_id}', follow=True)
         expected = RaidSerializer(raid).data
         actual = resp.json()
         assert actual == expected
 
-    def test_import_smoke(self, api_client: APIClient):
-        resp = api_client.post(self.endpoint, {'hello': 'world'})
+    def test_import_smoke(self, authenticated_client: APIClient):
+        resp = authenticated_client.post(self.endpoint, {'hello': 'world'})
         assert resp.json() == {'greeting': 'hello'}
