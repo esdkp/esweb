@@ -34,3 +34,4 @@ def raid(db, event, items):
         name="Less Awesome Loot"), raid=raid)
     Loot.objects.create(item=Item.objects.get(
         name="Less Awesome Loot"), raid=raid)
+    return raid
