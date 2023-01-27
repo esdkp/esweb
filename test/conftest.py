@@ -5,10 +5,18 @@ from dkp.models import Loot, Raid
 
 from eq.models import Event, Item
 
+from django.contrib.auth import get_user_model
 
 @pytest.fixture
-def api_client() -> APIClient:
-    return APIClient()
+def test_user(django_user_model):
+    return django_user_model.objects.create(username='bilbo_baggins', password='hunter2')
+
+@pytest.fixture
+def api_client(test_user) -> APIClient:
+    client = APIClient()
+    client.force_login(test_user)
+    yield client
+    client.logout()
 
 
 @pytest.fixture()
@@ -20,7 +28,6 @@ def items(db):
 @pytest.fixture
 def event(db):
     Event.objects.create(name="Awesome Event")
-
 
 @pytest.fixture
 def raid(db, event, items):
