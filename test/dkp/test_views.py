@@ -17,3 +17,21 @@ class TestImportView:
     def test_import_smoke(self, authenticated_client: APIClient):
         resp = authenticated_client.post(self.endpoint, {'hello': 'world'})
         assert resp.json() == {'greeting': 'hello'}
+
+    # failure/partial failure cases
+    def test_it_fails_completely_if_raid_already_exists(self,authenticated_client: APIClient):
+        pass
+    
+    def test_it_reports_if_some_items_already_exist(self,authenticated_client: APIClient):
+        pass
+
+    def test_it_reports_if_some_characters_already_exist(self,authenticated_client: APIClient):
+        pass
+
+    # happy path
+    # NOTE: might create more specific test cases as I discover what "appropriately" means in more detail
+    def test_it_creates_a_raid_and_event_appropriately(self, authenticated_client: APIClient):
+        pass
+
+    def test_it_updates_characters_and_raiders_appropriately(self, authenticated_client: APIClient):
+        pass

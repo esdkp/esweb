@@ -17,10 +17,18 @@ from .serializers import (
 )
 
 class ImportView(viewsets.GenericViewSet):
+    """
+    API endpoint for bootstrapping a Raid (and optionally, event) with all the necessary character and loot configuration
+    
+    does it's best to "partially succeed" (instead of "fail fast") while letting the caller know what it can or cannot complete
+    """
     serializer_class = ImportSerializer
     
     def create(self, request):
-        print('in post')
+        # service logic stub
+        # create raid - should fail entire route if raid with same name already exists
+
+
         return Response({'greeting': 'hello'})
 
 class RaidsView(ListView):
