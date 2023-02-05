@@ -6,6 +6,7 @@ from django.urls import reverse_lazy
 from django.views.generic import ListView, DetailView
 from django.views.generic.edit import CreateView
 from rest_framework import viewsets
+from rest_framework import status
 from rest_framework.response import Response
 from .models import Raid, Loot, Raider
 from .forms import RaidCreateForm
@@ -27,9 +28,10 @@ class ImportView(viewsets.GenericViewSet):
     def create(self, request):
         # service logic stub
         # create raid - should fail entire route if raid with same name already exists
-        data = ImportSerializer(data=request.data)
-
-        return Response({'greeting': 'hello'})
+        serializer = ImportSerializer(data=request.data)
+        if serializer.is_valid():
+            return Response({'greeting': 'hello'})
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 class RaidsView(ListView):
     """

@@ -15,7 +15,7 @@ class TestImportView:
         assert actual == expected
 
     def test_import_smoke(self, authenticated_client: APIClient, sample_import_data):
-        resp = authenticated_client.post(self.endpoint, {'loots':sample_import_data['Loots'] })
+        resp = authenticated_client.post(self.endpoint, { 'loots': sample_import_data['Loots'] }, format='json',)
         assert resp.json() == {'greeting': 'hello'}
 
     # failure/partial failure cases

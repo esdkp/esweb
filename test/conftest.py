@@ -28,6 +28,7 @@ def test_user(django_user_model):
 def authenticated_client(test_user) -> APIClient:
     client = APIClient()
     client.force_login(test_user)
+    
     yield client
     client.logout()
 
