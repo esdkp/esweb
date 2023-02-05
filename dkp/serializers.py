@@ -19,6 +19,11 @@ class RaiderSerializer(serializers.ModelSerializer):
         model = Raider
         fields = "__all__"
 
-class ImportSerializer(serializers.ListSerializer):
-    def create(self, validated_data):
-        return super().create(validated_data)
+class ImportSerializer(serializers.Serializer):
+    """
+    meta-serializer for several other 'real' serializers
+
+    for more see https://www.django-rest-framework.org/api-guide/serializers/#dealing-with-nested-objects
+    """
+
+    loots = LootSerializer(many=True)

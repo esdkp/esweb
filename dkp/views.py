@@ -27,7 +27,7 @@ class ImportView(viewsets.GenericViewSet):
     def create(self, request):
         # service logic stub
         # create raid - should fail entire route if raid with same name already exists
-
+        data = ImportSerializer(data=request.data)
 
         return Response({'greeting': 'hello'})
 

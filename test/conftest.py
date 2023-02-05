@@ -2,10 +2,23 @@ import datetime
 import pytest
 from rest_framework.test import APIClient
 from dkp.models import Loot, Raid
-
+from pathlib import Path
 from eq.models import Event, Item
+import json
 
-from django.contrib.auth import get_user_model
+# @pytest.fixture(scope='session')
+# def seed_db(django_db_setup, django_db_blocker):
+#     """use fixtures mentioned in README in tests"""
+#     with django_db_blocker.unblock():
+#         call_command('loaddata', 'classes', 'events', 'expansions', 'races', 'servers')
+
+DIRECTORY = Path(__file__).parent
+RESOURCE_DIR = DIRECTORY.joinpath('resources')
+
+@pytest.fixture
+def sample_import_data():
+    with RESOURCE_DIR.joinpath('sample-import-request.json').open() as f:
+        yield json.load(f)
 
 @pytest.fixture
 def test_user(django_user_model):
