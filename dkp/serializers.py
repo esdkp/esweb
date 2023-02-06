@@ -21,13 +21,14 @@ class RaiderSerializer(serializers.ModelSerializer):
         fields = "__all__"
 
 
-class PatchedItemSerializer(ItemSerializer):
-    """
-    handles rename logic for base `ItemSerializer
+class PatchedItemSerializer(serializers.Serializer):
     """
 
-    # TODO: this isn't actually overwriting the `name` property from `ItemSerializer`
-    name = serializers.CharField(source='Name')
+    """
+
+    name = serializers.CharField()
+    raider = serializers.CharField()
+    points = serializers.FloatField()
 
 class ImportSerializer(serializers.Serializer):
     # also look into https://github.com/beda-software/drf-writable-nested
@@ -36,5 +37,11 @@ class ImportSerializer(serializers.Serializer):
 
     for more see https://www.django-rest-framework.org/api-guide/serializers/#dealing-with-nested-objects
     """
-
+    date = serializers.DateTimeField()
+    name = serializers.CharField()
+    attendance = serializers.IntegerField(default=0)
+    raiders = serializers.ListField(child=serializers.CharField(), allow_empty=False)
     loots = PatchedItemSerializer(many=True)
+
+    def create(self, validated_data):
+        return super().create(validated_data)

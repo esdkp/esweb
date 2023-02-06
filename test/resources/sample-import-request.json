@@ -1,8 +1,8 @@
 {
-    "Date": "2022-01-17T00:00:00",
-    "Name": "TolUpDoomshadeA0",
-    "Attendance": 2.0,
-    "Raiders": [
+    "date": "2022-01-17T00:00:00",
+    "name": "TolUpDoomshadeA0",
+    "attendance": 2.0,
+    "raiders": [
         "Kaputzie",
         "Aniea",
         "Renfoe",
@@ -54,36 +54,36 @@
         "Bubbakat",
         "Dirtmunch"
     ],
-    "Loots": [
+    "loots": [
         {
-            "Name": "Calcified Bloodied Ore",
-            "Raider": "Kallel",
-            "Points": 12000.0
+            "name": "Calcified Bloodied Ore",
+            "raider": "Kallel",
+            "points": 12000.0
         },
         {
-            "Name": "Buckle of Phlebotomy",
-            "Raider": "Bubbakat",
-            "Points": 9000.0
+            "name": "Buckle of Phlebotomy",
+            "raider": "Bubbakat",
+            "points": 9000.0
         },
         {
-            "Name": "Buckle of Phlebotomy",
-            "Raider": "Geired",
-            "Points": 9000.0
+            "name": "Buckle of Phlebotomy",
+            "raider": "Geired",
+            "points": 9000.0
         },
         {
-            "Name": "Faded Waning Gibbous Hands Armor",
-            "Raider": "Bakammer",
-            "Points": 9000.0
+            "name": "Faded Waning Gibbous Hands Armor",
+            "raider": "Bakammer",
+            "points": 9000.0
         },
         {
-            "Name": "Faded Waning Gibbous Wrist Armor",
-            "Raider": "Tanalos",
-            "Points": 9000.0
+            "name": "Faded Waning Gibbous Wrist Armor",
+            "raider": "Tanalos",
+            "points": 9000.0
         },
         {
-            "Name": "Akhevan Trunk",
-            "Raider": "Pamypoo",
-            "Points": 800.0
+            "name": "Akhevan Trunk",
+            "raider": "Pamypoo",
+            "points": 800.0
         }
     ]
 }
