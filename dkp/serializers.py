@@ -1,4 +1,4 @@
-from eq.models import Event
+from eq.models import Character, Event, Item
 from eq.serializers import ItemSerializer
 from .models import Raid, Loot, Raider
 from rest_framework import serializers
@@ -42,8 +42,10 @@ class ImportSerializer(serializers.Serializer):
 
     def create(self, validated_data):
         # see https://www.django-rest-framework.org/api-guide/serializers/#writable-nested-representations
+        # TODO: figure out how django handles transactions here
         raid = self._create_raid(validated_data)
-        
+        self._create_attendees(validated_data, raid)
+        self._create_items(validated_data, raid)
         return 
     
     def _create_raid(self, validated_data):
@@ -51,5 +53,32 @@ class ImportSerializer(serializers.Serializer):
         raid = Raid.objects.create(date=validated_data['date'], attendance_value=validated_data['attendance'], event=event)
         return raid
 
-    def _create_attendees(self, validated_data):
-        pass
+    def _create_attendees(self, validated_data: dict, raid: Raid):
+        raiders = validated_data['raiders']
+        
+        # TODO: check with Alex:  should this method fail if the character already exist?
+        # TODO: will this return only those objects that were created?
+        characters = Character.objects.bulk_create([
+            Character(name=raider)
+            for raider in raiders
+        ], ignore_conflicts=True)
+
+        # attendees = [
+        #     Raider()
+        #     for raider in raiders
+        # ]
+        return
+
+    def _create_items(self, validated_data: dict, raid: Raid):
+        items = [
+            Item(
+                name=item['name'],
+                event=raid.event,
+                dkp=item['points']
+            )
+            for item in validated_data['loots']
+        ]
+
+        item_objs = Item.objects.bulk_create(items)
+        return item_objs
+
