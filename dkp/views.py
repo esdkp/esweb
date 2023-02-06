@@ -30,6 +30,7 @@ class ImportView(viewsets.GenericViewSet):
         # create raid - should fail entire route if raid with same name already exists
         serializer = ImportSerializer(data=request.data)
         if serializer.is_valid():
+            serializer.create(serializer.validated_data)
             return Response({'greeting': 'hello'})
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 

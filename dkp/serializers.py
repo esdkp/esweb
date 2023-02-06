@@ -1,3 +1,4 @@
+from eq.models import Event
 from eq.serializers import ItemSerializer
 from .models import Raid, Loot, Raider
 from rest_framework import serializers
@@ -22,10 +23,6 @@ class RaiderSerializer(serializers.ModelSerializer):
 
 
 class PatchedItemSerializer(serializers.Serializer):
-    """
-
-    """
-
     name = serializers.CharField()
     raider = serializers.CharField()
     points = serializers.FloatField()
@@ -44,4 +41,15 @@ class ImportSerializer(serializers.Serializer):
     loots = PatchedItemSerializer(many=True)
 
     def create(self, validated_data):
-        return super().create(validated_data)
+        # see https://www.django-rest-framework.org/api-guide/serializers/#writable-nested-representations
+        raid = self._create_raid(validated_data)
+        
+        return 
+    
+    def _create_raid(self, validated_data):
+        event = Event.objects.create(name=validated_data['name'])
+        raid = Raid.objects.create(date=validated_data['date'], attendance_value=validated_data['attendance'], event=event)
+        return raid
+
+    def _create_attendees(self, validated_data):
+        pass
