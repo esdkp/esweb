@@ -54,20 +54,21 @@ class ImportSerializer(serializers.Serializer):
     def _create_attendees(self, validated_data: dict, raid: Raid) -> list[Raider]:
         
         # TODO: check with Alex:  should this method fail if the character already exist?
-        # TODO: will this return only those objects that were created?
         temp_eqclass = Klass.objects.create(name='foo', short_name='bar')
         temp_eqrace = Race.objects.create(name='hobbits', short_name='hob')
         temp_server = Server.objects.create(name='server', short_name='ser')
 
-        characters = Character.objects.bulk_create([
-            Character(
+        # bulk_create seems to misbehave
+        # see caveats: https://docs.djangoproject.com/en/4.1/ref/models/querysets/#bulk-create
+        characters = []
+        for raider in validated_data['raiders']:
+            c = Character.objects.create(
                 name=raider, 
                 eqclass=temp_eqclass, 
                 eqrace=temp_eqrace, 
                 server=temp_server
             )
-            for raider in validated_data['raiders']
-        ])
+            characters.append(c)
 
         raiders = Raider.objects.bulk_create(
             [
