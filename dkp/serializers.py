@@ -1,8 +1,6 @@
-from eq.models import Character, Event, Item
-from eq.serializers import ItemSerializer
+from eq.models import Character, Event, Item, Klass, Race, Server
 from .models import Raid, Loot, Raider
 from rest_framework import serializers
-from drf_writable_nested.serializers import WritableNestedModelSerializer
 
 class RaidSerializer(serializers.ModelSerializer):
     class Meta:
@@ -48,37 +46,46 @@ class ImportSerializer(serializers.Serializer):
         self._create_items(validated_data, raid)
         return 
     
-    def _create_raid(self, validated_data):
+    def _create_raid(self, validated_data) -> Raid:
         event = Event.objects.create(name=validated_data['name'])
         raid = Raid.objects.create(date=validated_data['date'], attendance_value=validated_data['attendance'], event=event)
         return raid
 
-    def _create_attendees(self, validated_data: dict, raid: Raid):
-        raiders = validated_data['raiders']
+    def _create_attendees(self, validated_data: dict, raid: Raid) -> list[Raider]:
         
         # TODO: check with Alex:  should this method fail if the character already exist?
         # TODO: will this return only those objects that were created?
-        characters = Character.objects.bulk_create([
-            Character(name=raider)
-            for raider in raiders
-        ], ignore_conflicts=True)
+        temp_eqclass = Klass.objects.create(name='foo', short_name='bar')
+        temp_eqrace = Race.objects.create(name='hobbits', short_name='hob')
+        temp_server = Server.objects.create(name='server', short_name='ser')
 
-        # attendees = [
-        #     Raider()
-        #     for raider in raiders
-        # ]
-        return
+        characters = Character.objects.bulk_create([
+            Character(
+                name=raider, 
+                eqclass=temp_eqclass, 
+                eqrace=temp_eqrace, 
+                server=temp_server
+            )
+            for raider in validated_data['raiders']
+        ])
+
+        raiders = Raider.objects.bulk_create(
+            [
+                Raider(character=character, raid=raid)
+                for character in characters
+            ], ignore_conflicts=True
+        )
+
+        return raiders
 
     def _create_items(self, validated_data: dict, raid: Raid):
-        items = [
+        # TODO: what is the difference between an `Item` and `Loot` here?  should this also create `Loot`?
+        return Item.objects.bulk_create([
             Item(
                 name=item['name'],
                 event=raid.event,
                 dkp=item['points']
             )
             for item in validated_data['loots']
-        ]
-
-        item_objs = Item.objects.bulk_create(items)
-        return item_objs
+        ], ignore_conflicts=True)
 
