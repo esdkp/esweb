@@ -6,13 +6,33 @@ from django.urls import reverse_lazy
 from django.views.generic import ListView, DetailView
 from django.views.generic.edit import CreateView
 from rest_framework import viewsets
+from rest_framework import status
+from rest_framework.response import Response
 from .models import Raid, Loot, Raider
 from .forms import RaidCreateForm
 from .serializers import (
+    ImportSerializer,
     RaidSerializer,
     LootSerializer,
     RaiderSerializer,
 )
+
+class ImportView(viewsets.GenericViewSet):
+    """
+    API endpoint for bootstrapping a Raid (and optionally, event) with all the necessary character and loot configuration
+    
+    does it's best to "partially succeed" (instead of "fail fast") while letting the caller know what it can or cannot complete
+    """
+    serializer_class = ImportSerializer
+    
+    def create(self, request):
+        # service logic stub
+        # create raid - should fail entire route if raid with same name already exists
+        serializer = ImportSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.create(serializer.validated_data)
+            return Response({'greeting': 'hello'})
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 class RaidsView(ListView):
     """

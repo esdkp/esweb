@@ -1,0 +1,89 @@
+{
+    "date": "2022-01-17T00:00:00",
+    "name": "TolUpDoomshadeA0",
+    "attendance": 2.0,
+    "raiders": [
+        "Kaputzie",
+        "Aniea",
+        "Renfoe",
+        "Demoria",
+        "Aldaridious",
+        "Defector",
+        "Phaolin",
+        "Ramlaum",
+        "Lorai",
+        "Tanalos",
+        "Dalalron",
+        "Sonyan",
+        "Omegga",
+        "Bonzz",
+        "Kilor",
+        "Caeni",
+        "Sparkel",
+        "Chitiwok",
+        "Tanluyen",
+        "Hideaway",
+        "Mahtan",
+        "Ristro",
+        "Fafhurd",
+        "Shislak",
+        "Aamsung",
+        "Fishlips",
+        "Bakammer",
+        "Carrizerk",
+        "Bend",
+        "Rapitiss",
+        "Gandiyen",
+        "Adaland",
+        "Geired",
+        "Bethanny",
+        "Daewar",
+        "Kallel",
+        "Terrormax",
+        "Marmax",
+        "Golrin",
+        "Ubdaien",
+        "Thalsadoom",
+        "Carbainus",
+        "Halaster",
+        "Spoiledbrat",
+        "Bilesome",
+        "Pamypoo",
+        "Negdani",
+        "Kazh",
+        "Bubbakat",
+        "Dirtmunch"
+    ],
+    "loots": [
+        {
+            "name": "Calcified Bloodied Ore",
+            "raider": "Kallel",
+            "points": 12000.0
+        },
+        {
+            "name": "Buckle of Phlebotomy",
+            "raider": "Bubbakat",
+            "points": 9000.0
+        },
+        {
+            "name": "Buckle of Phlebotomy",
+            "raider": "Geired",
+            "points": 9000.0
+        },
+        {
+            "name": "Faded Waning Gibbous Hands Armor",
+            "raider": "Bakammer",
+            "points": 9000.0
+        },
+        {
+            "name": "Faded Waning Gibbous Wrist Armor",
+            "raider": "Tanalos",
+            "points": 9000.0
+        },
+        {
+            "name": "Akhevan Trunk",
+            "raider": "Pamypoo",
+            "points": 800.0
+        }
+    ]
+}

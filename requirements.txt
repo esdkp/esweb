@@ -6,6 +6,7 @@ dill==0.3.5.1
 Django==4.0.7
 django-filter==21.1
 djangorestframework==3.13.1
+drf-writable-nested==0.7.0
 dumb-init==1.2.5.post1
 factory-boy==3.2.1
 Faker==13.12.0

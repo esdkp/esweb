@@ -1,0 +1,100 @@
+{
+    "Date": "2022-01-17T00:00:00",
+    // Eventually, the name (or some other attribute) will line up with the `eq.Event` Model
+    // for the import, all our names will look something like this, they are human input and non-standardized
+    "Name": "TolUpDoomshadeA0",
+    // This is unique to an instance of a raid, and will effect business logic around attendance percentages
+    "Attendance": 2.0,
+    // A name here directly lines up with eq.Character.Name, which should be associated with an dkp.Raider at some point
+    // This relationship may be overly complicated. The reason I made it is because DKP balances are specific to a HUMAN, eg. Raider, not to a character, so I needed a way to represent that
+    "Raiders": [
+        "Kaputzie",
+        "Aniea",
+        "Renfoe",
+        "Demoria",
+        "Aldaridious",
+        "Defector",
+        "Phaolin",
+        "Ramlaum",
+        "Lorai",
+        "Tanalos",
+        "Dalalron",
+        "Sonyan",
+        "Omegga",
+        "Bonzz",
+        "Kilor",
+        "Caeni",
+        "Sparkel",
+        "Chitiwok",
+        "Tanluyen",
+        "Hideaway",
+        "Mahtan",
+        "Ristro",
+        "Fafhurd",
+        "Shislak",
+        "Aamsung",
+        "Fishlips",
+        "Bakammer",
+        "Carrizerk",
+        "Bend",
+        "Rapitiss",
+        "Gandiyen",
+        "Adaland",
+        "Geired",
+        "Bethanny",
+        "Daewar",
+        "Kallel",
+        "Terrormax",
+        "Marmax",
+        "Golrin",
+        "Ubdaien",
+        "Thalsadoom",
+        "Carbainus",
+        "Halaster",
+        "Spoiledbrat",
+        "Bilesome",
+        "Pamypoo",
+        "Negdani",
+        "Kazh",
+        "Bubbakat",
+        "Dirtmunch"
+    ],
+    // I call these "Loots" because it's an instance of an `eq.Item` being assigned to a `dkp.Raider` for some value of Points
+    "Loots": [
+        {
+            // This name should directly line up with an eq.Item
+            // Names are not required to be unique in EQ for Items, however, within our DKP system we can assume an eq.Event in an eq.Expansion can only drop certain eq.Items
+            // This would allow us to uniquely identify the item in our business logic
+            "Name": "Calcified Bloodied Ore",
+            // This name  here will be chosen by a HUMAN when they assign the loot, and should always refer to dkp.Raider. However, as always, if it's not a dkp.Raider, it's still an eq.Character, which may be associated with an active raider or may not
+            // This will take some business logic to figure out also
+            "Raider": "Kallel",
+            "Points": 12000.0
+        },
+        {
+            "Name": "Buckle of Phlebotomy",
+            "Raider": "Bubbakat",
+            "Points": 9000.0
+        },
+        {
+            "Name": "Buckle of Phlebotomy",
+            "Raider": "Geired",
+            "Points": 9000.0
+        },
+        {
+            "Name": "Faded Waning Gibbous Hands Armor",
+            "Raider": "Bakammer",
+            "Points": 9000.0
+        },
+        {
+            "Name": "Faded Waning Gibbous Wrist Armor",
+            "Raider": "Tanalos",
+            "Points": 9000.0
+        },
+        {
+            "Name": "Akhevan Trunk",
+            "Raider": "Pamypoo",
+            "Points": 800.0
+        }
+    ]
+}
