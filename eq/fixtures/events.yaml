@@ -296,3 +296,73 @@
   fields:
     name: "Pit Fights"
     expansion: 29
+- model: eq.Event
+  pk: 61
+  fields:
+    name: "When One Door Closes"
+    expansion: 29
+- model: eq.Event
+  pk: 62
+  fields:
+    name: "Myconid Mutiny"
+    expansion: 29
+- model: eq.Event
+  pk: 63
+  fields:
+    name: "Dance of the Demiurge"
+    expansion: 29
+- model: eq.Event
+  pk: 64
+  fields:
+    name: "The Spirit Fades"
+    expansion: 29
+- model: eq.Event
+  pk: 65
+  fields:
+    name: "The Shadows Move"
+    expansion: 29
+- model: eq.Event
+  pk: 66
+  fields:
+    name: "Under Siege"
+    expansion: 29
+- model: eq.Event
+  pk: 67
+  fields:
+    name: "The Return of Kanghammer"
+    expansion: 30
+- model: eq.Event
+  pk: 68
+  fields:
+    name: "Bidils the Quickhand"
+    expansion: 30
+- model: eq.Event
+  pk: 69
+  fields:
+    name: "Shadow of My Shadow"
+    expansion: 30
+- model: eq.Event
+  pk: 70
+  fields:
+    name: "The Prisoners of Ankexfen"
+    expansion: 30
+- model: eq.Event
+  pk: 71
+  fields:
+    name: "What is it For?"
+    expansion: 30
+- model: eq.Event
+  pk: 72
+  fields:
+    name: "The Artisan and the Druid"
+    expansion: 30
+- model: eq.Event
+  pk: 73
+  fields:
+    name: "Heroes Are Forged"
+    expansion: 30
+- model: eq.Event
+  pk: 74
+  fields:
+    name: "Final Fugue"
+    expansion: 30
