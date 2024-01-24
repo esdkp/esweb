@@ -143,3 +143,8 @@
   fields:
     name: "Night of Shadows"
     short_name: "NOS"
+- model: eq.Expansion
+  pk: 30
+  fields:
+    name: "Laurion's Song"
+    short_name: "LS"
