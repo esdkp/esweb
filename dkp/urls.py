@@ -10,4 +10,5 @@ urlpatterns = [
     re_path(r"^$", views.RaidsView.as_view(), name="index"),
     path("raids/add/", views.RaidCreateView.as_view(), name="raid-add"),
     path("raids/<pk>/", views.RaidDetailView.as_view(), name="raid-view"),
+    path("import/", views.ImportView.as_view({'post': 'create'}), name='import'),
 ]

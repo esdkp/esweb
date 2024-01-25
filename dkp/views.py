@@ -5,10 +5,12 @@ from django.http import HttpResponse
 from django.urls import reverse_lazy
 from django.views.generic import ListView, DetailView
 from django.views.generic.edit import CreateView
-from rest_framework import viewsets
+from rest_framework import status, viewsets
+from rest_framework.response import Response
 from .models import Raid, Loot, Raider
 from .forms import RaidCreateForm
 from .serializers import (
+    ImportSerializer,
     RaidSerializer,
     LootSerializer,
     RaiderSerializer,
@@ -82,3 +84,22 @@ class RaiderViewSet(viewsets.ModelViewSet):
 
     queryset = Raider.objects.all()
     serializer_class = RaiderSerializer
+
+
+
+class ImportView(viewsets.GenericViewSet):
+    """
+    API endpoint to bulk import raids trying it's best to succeed as often as possible.
+    It will lazily find or create all dependent objects (raiders+characters, items+loots, and the event)
+    If there is a failure on dependent object creation, the import of that item will fail.
+    """
+    serializer_class = ImportSerializer
+
+    def create(self, request):
+        # service logic stub
+        # create raid - should fail entire route if raid with same name already exists
+        serializer = ImportSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.create(serializer.validated_data)
+            return Response(serializer.validated_data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
