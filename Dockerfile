@@ -1,4 +1,4 @@
-FROM python:3.11 as builder
+FROM python:3.12 as builder
 
 RUN apt-get install -y --no-install-recommends default-libmysqlclient-dev
 
@@ -9,7 +9,7 @@ RUN pip install --user -r /requirements.txt
 
 
 
-FROM python:3.11-slim-buster
+FROM python:3.12-slim-bullseye
 
 ARG BUILD_COMMIT_SHA
 ENV BUILD_COMMIT_SHA ${BUILD_COMMIT_SHA:-}

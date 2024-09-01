@@ -37,6 +37,14 @@ Adjust your `blackPath` as necessary.
 
 I develop on a Mac, but this stuff should all work on any operating system that can run docker and docker-compose.
 
+### Ubuntu 24.04
+
+If you don't wish to use docker and want to be able to install requirements locally, on Ubuntu 24.04 you will need the following to get `mysqlclient` python package working:
+
+```bash
+sudo apt install python3-dev pkg-config default-libmysqlclient-dev
+```
+
 ## Running tests
 
 If you're using docker-compose for local development, the following commands should work out of the box
